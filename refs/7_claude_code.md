@@ -5,7 +5,7 @@
 
 # Step 7: blog-kit Optimization Command 
 
-blog-kit is a good varient of spec-kit, using the same infrastructure @.specify/memory/constitution.md . I want add a new command
+blog-tech-kit is a good varient of spec-kit, using the same infrastructure @.specify/memory/constitution.md . I want add a new command
   called "optimize" to the project blog-kit , to go future than spec-kit. many complex jobs requires iterative optimization of workflows and
   prompting. the "optimize" or "./blogkit.optimize". read @refs/7_optimization.md about background information of state-of-art agent
   evaluation-suggestion-improvement stages materials. You must all use the same tech stacks / infrastructure of this current blog-kit. add a
