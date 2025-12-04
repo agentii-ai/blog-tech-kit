@@ -1,0 +1,24 @@
+[project]
+name = "blog-cli"
+version = "0.0.22"
+description = "blog CLI, part of blog-Kit. A tool to bootstrap your projects for blog (Product-Market-Fit) discovery and validation."
+requires-python = ">=3.11"
+dependencies = [
+    "typer",
+    "rich",
+    "httpx[socks]",
+    "platformdirs",
+    "readchar",
+    "truststore>=0.10.4",
+]
+
+[project.scripts]
+blog = "blog_cli:main"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/blog_cli"]
+
