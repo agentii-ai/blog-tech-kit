@@ -1,7 +1,7 @@
 [project]
 name = "blog-cli"
 version = "0.0.22"
-description = "blog CLI, part of blog-Kit. A tool to bootstrap your projects for blog (Product-Market-Fit) discovery and validation."
+description = "Blog CLI, part of Blog-Tech-Kit. A spec-driven development tool for Twitter marketing and technical blog growth for AI SaaS products."
 requires-python = ">=3.11"
 dependencies = [
     "typer",
