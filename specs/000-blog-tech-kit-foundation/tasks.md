@@ -220,7 +220,7 @@
 - [x] T082 [P] Update blogkit.taskstoissues.md to create GitHub issues with dependencies, labels, milestones
 - [x] T083 [P] Create `/blogkit.constitution` slash command in `.blogkit/templates/commands/blogkit.constitution.md` (create or update blog governance principles)
 - [x] T084 [P] Update blogkit.constitution.md to update `.blogkit/memory/constitution.md` with blog-specific principles
-- [ ] T085 Test all additional slash commands: verify each produces expected output without errors
+- [x] T085 Test all additional slash commands: verify each produces expected output without errors
 
 **Checkpoint**: All 9 slash commands functional - complete blog-tech-kit workflow available
 
@@ -234,16 +234,16 @@
 
 ### Implementation for Reference Documentation
 
-- [ ] T086 [P] Verify `refs/0_overview.md` contains overview of successful AI/LLM SaaS blogs (Anthropic, LangChain, Hugging Face)
-- [ ] T087 [P] Verify `refs/1_principles_for_constitution.md` contains 8 Core Blog Principles with examples and case studies
-- [ ] T088 [P] Verify `refs/2_define_for_specify.md` contains blog writing best practices and content strategy guidance
-- [ ] T089 [P] Verify `refs/3_project_mangement_for_plan.md` contains blog operations guide (editorial workflow, distribution, measurement)
-- [ ] T090 [P] Verify `refs/4_pm_tasking_for_tasks.md` contains tasking methodology for blog execution
-- [ ] T091 [P] Verify `refs/6_claude_code.md` contains Claude Code integration guide with usage examples
-- [ ] T092 [P] Verify `refs/5_more/blog_operations_guide.md` contains detailed operational guide
-- [ ] T093 [P] Verify `refs/5_more/blog_strategy_analysis.md` contains case studies with documented growth data
-- [ ] T094 [P] Verify `refs/5_more/overview.md` contains comprehensive writing guide (857 lines)
-- [ ] T095 [P] Verify `refs/5_more/tasking_methodology.md` contains complete tasking framework with PDCA loops
+- [x] T086 [P] Verify `refs/0_overview.md` contains overview of successful AI/LLM SaaS blogs (Anthropic, LangChain, Hugging Face)
+- [x] T087 [P] Verify `refs/1_principles_for_constitution.md` contains 8 Core Blog Principles with examples and case studies
+- [x] T088 [P] Verify `refs/2_define_for_specify.md` contains blog writing best practices and content strategy guidance
+- [x] T089 [P] Verify `refs/3_project_mangement_for_plan.md` contains blog operations guide (editorial workflow, distribution, measurement)
+- [x] T090 [P] Verify `refs/4_pm_tasking_for_tasks.md` contains tasking methodology for blog execution
+- [x] T091 [P] Verify `refs/6_claude_code.md` contains Claude Code integration guide with usage examples
+- [x] T092 [P] Verify `refs/5_more/blog_operations_guide.md` contains detailed operational guide
+- [x] T093 [P] Verify `refs/5_more/blog_strategy_analysis.md` contains case studies with documented growth data
+- [x] T094 [P] Verify `refs/5_more/overview.md` contains comprehensive writing guide (857 lines)
+- [x] T095 [P] Verify `refs/5_more/tasking_methodology.md` contains complete tasking framework with PDCA loops
 
 **Checkpoint**: Reference documentation complete - users have comprehensive guides for blog-tech-kit workflow
 
@@ -257,18 +257,18 @@
 
 ### Implementation for Template Adaptation
 
-- [ ] T096 [US3] Finalize `spec-template.md` in `.blogkit/templates/` with complete blog-specific sections
-- [ ] T097 [US3] Add example blog specification to spec-template.md (Authority Blog for AI/LLM Developers)
-- [ ] T098 [US3] Add validation checklist to spec-template.md (10 items from constitution Review & Acceptance Checklist)
-- [ ] T099 [US4] Finalize `plan-template.md` in `.blogkit/templates/` with complete editorial workflow sections
-- [ ] T100 [US4] Add example blog plan to plan-template.md (4-pass editorial process, Next.js + MDX, Plausible analytics)
-- [ ] T101 [US4] Add Constitution Check section to plan-template.md validating all 8 Core Blog Principles
-- [ ] T102 [US5] Finalize `tasks-template.md` in `.blogkit/templates/` with complete sprint organization sections
-- [ ] T103 [US5] Add example task breakdown to tasks-template.md (Sprint 0: Platform Setup, Sprint 1: Post 1, Sprint 2: Post 2)
-- [ ] T104 [US5] Add validation checkpoint examples to tasks-template.md (analytics review, SEO check, engagement review)
-- [ ] T105 Create `blog-post-template.md` in `.blogkit/templates/` with blog post structure (NEW template not in spec-kit)
-- [ ] T106 Add blog post template sections: Title & Hook, TLDR, Background, Main Content (H2/H3), Code Examples, Results, Lessons Learned, Conclusion & CTA, FAQ
-- [ ] T107 Add AI discoverability guidance to blog-post-template.md (JSON-LD schema, heading hierarchy, internal links)
+- [x] T096 [US3] Finalize `spec-template.md` in `.blogkit/templates/` with complete blog-specific sections
+- [x] T097 [US3] Add example blog specification to spec-template.md (Authority Blog for AI/LLM Developers)
+- [x] T098 [US3] Add validation checklist to spec-template.md (10 items from constitution Review & Acceptance Checklist)
+- [x] T099 [US4] Finalize `plan-template.md` in `.blogkit/templates/` with complete editorial workflow sections
+- [x] T100 [US4] Add example blog plan to plan-template.md (4-pass editorial process, Next.js + MDX, Plausible analytics)
+- [x] T101 [US4] Add Constitution Check section to plan-template.md validating all 8 Core Blog Principles
+- [x] T102 [US5] Finalize `tasks-template.md` in `.blogkit/templates/` with complete sprint organization sections
+- [x] T103 [US5] Add example task breakdown to tasks-template.md (Sprint 0: Platform Setup, Sprint 1: Post 1, Sprint 2: Post 2)
+- [x] T104 [US5] Add validation checkpoint examples to tasks-template.md (analytics review, SEO check, engagement review)
+- [x] T105 Create `blog-post-template.md` in `.blogkit/templates/` with blog post structure (NEW template not in spec-kit)
+- [x] T106 Add blog post template sections: Title & Hook, TLDR, Background, Main Content (H2/H3), Code Examples, Results, Lessons Learned, Conclusion & CTA, FAQ
+- [x] T107 Add AI discoverability guidance to blog-post-template.md (JSON-LD schema, heading hierarchy, internal links)
 
 **Checkpoint**: All templates adapted with blog-specific content - users have complete template library
 

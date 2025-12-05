@@ -367,3 +367,58 @@ Before moving to `/blogkit.plan`, verify:
 ---
 
 **Note**: This specification focuses on content strategy only. Technical implementation (platform, CMS, tools, hosting) will be defined in `plan.md` after running `/blogkit.plan`.
+
+---
+
+## Example: Authority Blog for AI/LLM Developers
+
+### Blog Type Declaration
+
+**Blog Type**: Authority
+
+**Rationale**: Position our company as the canonical reference for building effective AI agents in production. Authority blog targets high-intent decision makers (CTOs, engineering leads) who need to understand patterns, trade-offs, and best practices before committing to a technology or architecture.
+
+**Content Strategy Alignment**: Deep research, original insights, canonical content (6-12 month ROI). Each post establishes authority and becomes a referenced resource in industry discussions.
+
+### Target Audience
+
+**Primary Audience**:
+- **Persona**: Senior ML/Software Engineers (5+ years) building production LLM systems
+- **Use Cases**:
+  - Evaluating whether to use agents vs. traditional ML
+  - Understanding how to structure multi-agent systems reliably
+  - Learning patterns for error handling and guardrails in production agents
+- **Pain Points**:
+  - Documentation is scattered across multiple sources
+  - Most examples are demos, not production-grade code
+  - No clear patterns for structuring complex agent workflows
+- **Where They Are**: Hacker News, DEV.to, Engineering Twitter, AI Discord communities, LangChain Slack
+
+### Content Pillars
+
+**Pillar 1: Production-Grade Agent Patterns**
+- How to structure agents for reliability and observability
+- Error handling, retries, and circuit breakers in multi-agent systems
+- Testing agents in staging vs. production
+
+**Pillar 2: Context Engineering for AI Systems**
+- How to architect prompts and context for consistency
+- Measuring prompt performance and iterating
+- Reducing hallucination through structured context
+
+**Pillar 3: Multi-Agent Orchestration**
+- Coordinating specialized agents for complex tasks
+- Communication patterns between agents
+- Resource constraints and cost optimization
+
+### Publishing Cadence
+- Target: 2 Authority posts per month + 2 tutorials/practitioner posts
+- Authority posts: 2,000-4,000 words, 4-6 week research/writing cycle
+- Practitioner posts: 800-1,500 words, 2-week cycle
+- Total: ~15 posts in first 6 months
+
+### Success Metrics
+- **Authority Blog Success**: 50+ high-quality backlinks in month 6, 5K+ monthly pageviews to authority posts, 3+ citations by other technical blogs
+- **Team Thought Leadership**: 10+ speaking invitations from these posts, media mentions citing the blog
+- **Engagement**: Average time-on-page > 4 minutes, 2+ internal links per post followed
+- **Product Impact**: 30%+ of inbound demo requests cite blog as discovery source
