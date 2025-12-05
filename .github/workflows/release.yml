@@ -45,13 +45,8 @@ jobs:
         run: |
           chmod +x .github/workflows/scripts/check-release-exists.sh
           
-          if .github/workflows/scripts/check-release-exists.sh "${{ steps.version.outputs.new_version }}"; then
-            echo "exists=true" >> $GITHUB_OUTPUT
-            echo "Release ${{ steps.version.outputs.new_version }} already exists, skipping."
-          else
-            echo "exists=false" >> $GITHUB_OUTPUT
-            echo "Release ${{ steps.version.outputs.new_version }} does not exist, proceeding."
-          fi
+          # Script sets exists=true or exists=false in GITHUB_OUTPUT
+          .github/workflows/scripts/check-release-exists.sh "${{ steps.version.outputs.new_version }}"
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
@@ -83,9 +78,9 @@ jobs:
           fi
           
           # Spot-check one variant
-          unzip -q -d /tmp/validate-check .genreleases/spec-kit-template-claude-sh-*.zip
+          unzip -q -d /tmp/validate-check .genreleases/blog-tech-kit-template-claude-sh-*.zip
           
-          if [[ -d "/tmp/validate-check/spec-kit-template-claude-sh-${{ steps.version.outputs.new_version }}/.blogkit" ]]; then
+          if [[ -d "/tmp/validate-check/blog-tech-kit-template-claude-sh-${{ steps.version.outputs.new_version }}/.blogkit" ]]; then
             echo "✅ Package structure validated"
           else
             echo "❌ Package structure invalid"
@@ -93,7 +88,7 @@ jobs:
           fi
           
           # Check for blogkit commands
-          CMD_COUNT=$(ls -1 /tmp/validate-check/spec-kit-template-claude-sh-*/.claude/commands/blogkit.*.md 2>/dev/null | wc -l)
+          CMD_COUNT=$(ls -1 /tmp/validate-check/blog-tech-kit-template-claude-sh-*/.claude/commands/blogkit.*.md 2>/dev/null | wc -l)
           if [[ "$CMD_COUNT" -eq 9 ]]; then
             echo "✅ Command count validated: $CMD_COUNT"
           else

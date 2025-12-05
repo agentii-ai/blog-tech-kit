@@ -104,7 +104,7 @@ build_variant() {
   local script=$2  # sh or ps
   local version=$3
   
-  local variant_name="spec-kit-template-${agent}-${script}-${version}"
+  local variant_name="blog-tech-kit-template-${agent}-${script}-${version}"
   local base_dir="$GENRELEASES_DIR/$variant_name"
   
   echo "Building $variant_name from $BLOGKIT_SOURCE..."

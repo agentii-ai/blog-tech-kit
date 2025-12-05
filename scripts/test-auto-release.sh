@@ -206,7 +206,7 @@ test_single_agent_build() {
   local VERSION="v0.0.0-test"
   
   # Create a minimal build for testing
-  local variant_name="spec-kit-template-claude-sh-${VERSION}"
+  local variant_name="blog-tech-kit-template-claude-sh-${VERSION}"
   local base_dir="$TEST_DIR/$variant_name"
   
   mkdir -p "$base_dir/.blogkit/memory"
@@ -350,7 +350,7 @@ test_full_build() {
   local agents_to_check=("claude" "gemini" "copilot" "cursor-agent")
   
   for agent in "${agents_to_check[@]}"; do
-    local zip_file="$GENRELEASES_DIR/spec-kit-template-${agent}-sh-v0.0.0-test.zip"
+    local zip_file="$GENRELEASES_DIR/blog-tech-kit-template-${agent}-sh-v0.0.0-test.zip"
     if [[ -f "$zip_file" ]]; then
       log_pass "${agent}-sh variant exists"
       
@@ -360,7 +360,7 @@ test_full_build() {
       unzip -q "$zip_file" -d "$extract_target"
       
       local expected_dir=$(get_agent_dir "$agent")
-      local pkg_dir="$extract_target/spec-kit-template-${agent}-sh-v0.0.0-test"
+      local pkg_dir="$extract_target/blog-tech-kit-template-${agent}-sh-v0.0.0-test"
       
       if [[ -d "$pkg_dir/$expected_dir" ]]; then
         log_pass "${agent} has correct agent directory: $expected_dir"
@@ -375,13 +375,13 @@ test_full_build() {
   done
   
   # Test 4.3: Verify PowerShell variant
-  local ps_zip="$GENRELEASES_DIR/spec-kit-template-claude-ps-v0.0.0-test.zip"
+  local ps_zip="$GENRELEASES_DIR/blog-tech-kit-template-claude-ps-v0.0.0-test.zip"
   if [[ -f "$ps_zip" ]]; then
     local ps_extract="$TEST_DIR/check-ps"
     mkdir -p "$ps_extract"
     unzip -q "$ps_zip" -d "$ps_extract"
     
-    local ps_pkg="$ps_extract/spec-kit-template-claude-ps-v0.0.0-test"
+    local ps_pkg="$ps_extract/blog-tech-kit-template-claude-ps-v0.0.0-test"
     
     if [[ -d "$ps_pkg/.blogkit/scripts/powershell" ]]; then
       log_pass "PowerShell variant has powershell/ scripts"
@@ -399,13 +399,13 @@ test_full_build() {
   fi
   
   # Test 4.4: Check TOML format for gemini
-  local gemini_zip="$GENRELEASES_DIR/spec-kit-template-gemini-sh-v0.0.0-test.zip"
+  local gemini_zip="$GENRELEASES_DIR/blog-tech-kit-template-gemini-sh-v0.0.0-test.zip"
   if [[ -f "$gemini_zip" ]]; then
     local gemini_extract="$TEST_DIR/check-gemini"
     mkdir -p "$gemini_extract"
     unzip -q "$gemini_zip" -d "$gemini_extract"
     
-    local gemini_pkg="$gemini_extract/spec-kit-template-gemini-sh-v0.0.0-test"
+    local gemini_pkg="$gemini_extract/blog-tech-kit-template-gemini-sh-v0.0.0-test"
     local toml_count=$(ls -1 "$gemini_pkg/.gemini/commands/"*.toml 2>/dev/null | wc -l | tr -d ' ')
     
     if [[ "$toml_count" -eq "$EXPECTED_COMMANDS" ]]; then
@@ -428,7 +428,7 @@ test_content_integrity() {
   echo "Phase 5: Content Integrity Tests"
   echo "═══════════════════════════════════════════════════════════════════"
   
-  local zip_file="$TEST_DIR/full-build/spec-kit-template-claude-sh-v0.0.0-test.zip"
+  local zip_file="$TEST_DIR/full-build/blog-tech-kit-template-claude-sh-v0.0.0-test.zip"
   if [[ ! -f "$zip_file" ]]; then
     log_fail "Cannot run content tests - no build output"
     return 1
@@ -438,7 +438,7 @@ test_content_integrity() {
   mkdir -p "$content_extract"
   unzip -q "$zip_file" -d "$content_extract"
   
-  local pkg="$content_extract/spec-kit-template-claude-sh-v0.0.0-test"
+  local pkg="$content_extract/blog-tech-kit-template-claude-sh-v0.0.0-test"
   
   # Test 5.1: Check all required command files exist
   local required_cmds=("specify" "plan" "tasks" "implement" "analyze" "checklist" "clarify" "constitution" "taskstoissues")
@@ -490,7 +490,7 @@ test_compare_reference() {
   echo "Phase 6: Compare with Reference Package (spec-kit v0.0.89)"
   echo "═══════════════════════════════════════════════════════════════════"
   
-  local ref_zip="/Users/frank/kits/twitter-init-kit/spec-kit-template-claude-sh-v0.0.89.zip"
+  local ref_zip="/Users/frank/kits/twitter-init-kit/blog-tech-kit-template-claude-sh-v0.0.89.zip"
   
   if [[ ! -f "$ref_zip" ]]; then
     log_info "Reference package not found - skipping comparison tests"

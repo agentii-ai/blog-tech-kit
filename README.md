@@ -26,11 +26,11 @@ Download pre-built templates for your AI assistant from [GitHub Releases](https:
 
 | AI Agent | Template |
 |----------|----------|
-| Claude Code | `spec-kit-template-claude-sh-v*.zip` |
-| Cursor | `spec-kit-template-cursor-agent-sh-v*.zip` |
-| Windsurf | `spec-kit-template-windsurf-sh-v*.zip` |
-| GitHub Copilot | `spec-kit-template-copilot-sh-v*.zip` |
-| Gemini CLI | `spec-kit-template-gemini-sh-v*.zip` |
+| Claude Code | `blog-tech-kit-template-claude-sh-v*.zip` |
+| Cursor | `blog-tech-kit-template-cursor-agent-sh-v*.zip` |
+| Windsurf | `blog-tech-kit-template-windsurf-sh-v*.zip` |
+| GitHub Copilot | `blog-tech-kit-template-copilot-sh-v*.zip` |
+| Gemini CLI | `blog-tech-kit-template-gemini-sh-v*.zip` |
 
 Extract to your project root. The `.blogkit/` directory and agent-specific commands will be set up automatically.
 
