@@ -138,10 +138,10 @@
 
 ### Implementation for User Story 4
 
-- [ ] T042 [P] [US4] Adapt `plan-template.md` in `.blogkit/templates/` for editorial workflow and blog operations (replace code architecture with content workflow)
-- [ ] T043 [P] [US4] Update plan-template.md to include: Editorial Process (4-pass), Tech Stack, Tools & Integrations, AI Discoverability, Distribution Strategy, Analytics & Instrumentation
-- [ ] T044 [P] [US4] Remove software-specific sections from plan-template.md: Code Architecture, Backend Services, Deployment Pipelines, API Design
-- [ ] T045 [P] [US4] Add Constitution Check section to plan-template.md validating blog-specific principles (Content-First, AI-Native Distribution, Simplicity & Focus)
+- [x] T042 [P] [US4] Adapt `plan-template.md` in `.blogkit/templates/` for editorial workflow and blog operations (replace code architecture with content workflow)
+- [x] T043 [P] [US4] Update plan-template.md to include: Editorial Process (4-pass), Tech Stack, Tools & Integrations, AI Discoverability, Distribution Strategy, Analytics & Instrumentation
+- [x] T044 [P] [US4] Remove software-specific sections from plan-template.md: Code Architecture, Backend Services, Deployment Pipelines, API Design
+- [x] T045 [P] [US4] Add Constitution Check section to plan-template.md validating blog-specific principles (Content-First, AI-Native Distribution, Simplicity & Focus)
 - [ ] T046 [US4] Create `/blogkit.plan` slash command in `.blogkit/templates/commands/blogkit.plan.md`
 - [ ] T047 [US4] Update blogkit.plan.md to reference `refs/3_project_mangement_for_plan.md` for guidance on blog operations
 - [ ] T048 [US4] Update blogkit.plan.md to run `.blogkit/scripts/bash/setup-plan.sh` to create plan.md in feature directory
