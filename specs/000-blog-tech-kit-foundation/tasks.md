@@ -142,12 +142,12 @@
 - [x] T043 [P] [US4] Update plan-template.md to include: Editorial Process (4-pass), Tech Stack, Tools & Integrations, AI Discoverability, Distribution Strategy, Analytics & Instrumentation
 - [x] T044 [P] [US4] Remove software-specific sections from plan-template.md: Code Architecture, Backend Services, Deployment Pipelines, API Design
 - [x] T045 [P] [US4] Add Constitution Check section to plan-template.md validating blog-specific principles (Content-First, AI-Native Distribution, Simplicity & Focus)
-- [ ] T046 [US4] Create `/blogkit.plan` slash command in `.blogkit/templates/commands/blogkit.plan.md`
-- [ ] T047 [US4] Update blogkit.plan.md to reference `refs/3_project_mangement_for_plan.md` for guidance on blog operations
-- [ ] T048 [US4] Update blogkit.plan.md to run `.blogkit/scripts/bash/setup-plan.sh` to create plan.md in feature directory
-- [ ] T049 [US4] Update blogkit.plan.md to enforce Simplicity & Focus principle (no custom CMS before 10 posts, no over-engineering)
-- [ ] T050 [US4] Update blogkit.plan.md to generate `research.md` if NEEDS CLARIFICATION markers exist in Technical Context
-- [ ] T051 [US4] Update blogkit.plan.md to generate `quickstart.md` with getting-started guide for first post
+- [x] T046 [US4] Create `/blogkit.plan` slash command in `.blogkit/templates/commands/blogkit.plan.md`
+- [x] T047 [US4] Update blogkit.plan.md to reference `refs/3_project_mangement_for_plan.md` for guidance on blog operations
+- [x] T048 [US4] Update blogkit.plan.md to run `.blogkit/scripts/bash/setup-plan.sh` to create plan.md in feature directory
+- [x] T049 [US4] Update blogkit.plan.md to enforce Simplicity & Focus principle (no custom CMS before 10 posts, no over-engineering)
+- [x] T050 [US4] Update blogkit.plan.md to generate `research.md` if NEEDS CLARIFICATION markers exist in Technical Context
+- [x] T051 [US4] Update blogkit.plan.md to generate `quickstart.md` with getting-started guide for first post
 - [ ] T052 [US4] Test `/blogkit.plan` in Claude Code: verify plan.md includes editorial workflow, tech stack, AI optimization, distribution strategy
 - [ ] T053 [US4] Validate Simplicity & Focus gate: plan.md should pass "Complexity Review" (no over-engineering detected)
 
