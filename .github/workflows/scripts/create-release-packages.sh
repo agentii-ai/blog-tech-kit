@@ -148,7 +148,7 @@ total=0
 for agent in "${ALL_AGENTS[@]}"; do
   for script in sh ps; do
     build_variant "$agent" "$script" "$VERSION"
-    ((total++))
+    total=$((total + 1))
   done
 done
 
