@@ -636,7 +636,7 @@ def merge_json_files(existing_path: Path, new_content: dict, verbose: bool = Fal
 
 def download_template_from_github(ai_assistant: str, download_dir: Path, *, script_type: str = "sh", verbose: bool = True, show_progress: bool = True, client: httpx.Client = None, debug: bool = False, github_token: str = None) -> Tuple[Path, dict]:
     repo_owner = "agentii-ai"
-    repo_name = "blog-kit"
+    repo_name = "blog-tech-kit"
     if client is None:
         client = httpx.Client(verify=ssl_context)
 
@@ -684,7 +684,7 @@ def download_template_from_github(ai_assistant: str, download_dir: Path, *, scri
         raise typer.Exit(1)
 
     assets = release_data.get("assets", [])
-    pattern = f"spec-kit-template-{ai_assistant}-{script_type}"
+    pattern = f"blog-tech-kit-template-{ai_assistant}-{script_type}"
     matching_assets = [
         asset for asset in assets
         if pattern in asset["name"] and asset["name"].endswith(".zip")
@@ -1438,7 +1438,7 @@ def version():
     
     # Fetch latest template release version
     repo_owner = "agentii-ai"
-    repo_name = "blog-kit"
+    repo_name = "blog-tech-kit"
     api_url = f"https://api.github.com/repos/{repo_owner}/{repo_name}/releases/latest"
 
     template_version = "unknown"
@@ -1451,7 +1451,7 @@ def version():
             follow_redirects=True,
             headers=_github_auth_headers(),
         )
-        # Fall back to spec-kit if blog-kit has no releases
+        # Fall back to spec-kit if blog-tech-kit has no releases
         if response.status_code == 404:
             repo_owner = "github"
             repo_name = "spec-kit"
