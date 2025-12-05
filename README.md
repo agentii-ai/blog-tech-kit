@@ -1,27 +1,47 @@
-# Blog-Tech-Kit: AI-Native Blog Specification & Execution Framework
+# Blog-Tech-Kit
 
-A specialized variant of spec-kit optimized for building high-growth blogs for AI/LLM SaaS products.
+> **AI-Native Blog Specification & Execution Framework**
 
-**Blog-Tech-Kit** provides:
-- 🚀 **Content-First specification** - Define strategy before technology
-- 📋 **Editorial workflow orchestration** - 4-pass quality control built-in
-- 🎯 **Sprint-based task generation** - 6-phase content production for each post
-- 📊 **AI-native optimization** - JSON-LD schema, H2/H3 hierarchy, FAQ sections
-- 📈 **Performance tracking** - Built-in measurement gates and iteration
-- 🔄 **Multi-kit coexistence** - Runs alongside spec-kit without conflicts
+[![Release](https://img.shields.io/github/v/release/agentii-ai/blog-tech-kit)](https://github.com/agentii-ai/blog-tech-kit/releases)
+[![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
+
+A specialized framework for building high-growth technical blogs for AI/LLM SaaS products. Blog-Tech-Kit provides structured workflows, slash commands, and templates that work with **17 AI coding assistants**.
+
+## Why Blog-Tech-Kit?
+
+- 🚀 **Content-First** - Define strategy before choosing technology
+- 📋 **4-Pass Editorial Workflow** - Structural → Clarity → Technical → SEO review
+- 🎯 **Sprint-Based Tasks** - 6-phase production for each post
+- 📊 **AI-Native Optimization** - JSON-LD, H2/H3 hierarchy, FAQ sections
+- 🤖 **17 AI Agents Supported** - Claude, Cursor, Windsurf, Copilot, and more
+- 🔄 **Multi-Kit Coexistence** - Runs alongside spec-kit without conflicts
 
 ---
 
 ## Quick Start
 
-### Installation
+### Option 1: Download Templates (Recommended)
+
+Download pre-built templates for your AI assistant from [GitHub Releases](https://github.com/agentii-ai/blog-tech-kit/releases):
+
+| AI Agent | Template |
+|----------|----------|
+| Claude Code | `spec-kit-template-claude-sh-v*.zip` |
+| Cursor | `spec-kit-template-cursor-agent-sh-v*.zip` |
+| Windsurf | `spec-kit-template-windsurf-sh-v*.zip` |
+| GitHub Copilot | `spec-kit-template-copilot-sh-v*.zip` |
+| Gemini CLI | `spec-kit-template-gemini-sh-v*.zip` |
+
+Extract to your project root. The `.blogkit/` directory and agent-specific commands will be set up automatically.
+
+### Option 2: CLI Installation
 
 ```bash
-# Install blog-tech-kit from local development
-uv tool install blog-cli --from /path/to/blog-tech-kit
+# Install from PyPI (coming soon)
+pip install blog-cli
 
-# Or from PyPI (when released)
-uv tool install blog-cli
+# Or install from source
+uv tool install blog-cli --from /path/to/blog-tech-kit
 ```
 
 ### Create Your First Blog Project
@@ -75,7 +95,7 @@ blog init my-blog --ai claude
 
 ### 9 Slash Commands
 
-All commands available in Claude Code, Cursor, Windsurf:
+Available in all 17 supported AI agents:
 
 | Command | Purpose |
 |---------|---------|
@@ -366,27 +386,60 @@ The namespace strategy established in blog-tech-kit enables:
 
 ---
 
-## Support & Documentation
+## Supported AI Agents
 
-- **Installation**: See "Quick Start" section above
-- **Constitutional Principles**: See `refs/1_principles_for_constitution.md`
-- **Blog Writing Best Practices**: See `refs/2_define_for_specify.md`
-- **Editorial Operations**: See `refs/3_project_mangement_for_plan.md`
-- **Task Methodology**: See `refs/4_pm_tasking_for_tasks.md`
-- **Claude Code Integration**: See `refs/6_claude_code.md`
+17 AI coding assistants with pre-built templates:
+
+| Agent | Directory | Format |
+|-------|-----------|--------|
+| **Claude Code** | `.claude/commands/` | Markdown |
+| **Cursor** | `.cursor/commands/` | Markdown |
+| **Windsurf** | `.windsurf/workflows/` | Markdown |
+| **GitHub Copilot** | `.github/agents/` | Markdown |
+| **Gemini CLI** | `.gemini/commands/` | TOML |
+| **Qwen Code** | `.qwen/commands/` | TOML |
+| **Amazon Q** | `.amazonq/prompts/` | Markdown |
+| **opencode** | `.opencode/command/` | Markdown |
+| **Codex CLI** | `.codex/prompts/` | Markdown |
+| **Kilo Code** | `.kilocode/workflows/` | Markdown |
+| **Auggie CLI** | `.augment/commands/` | Markdown |
+| **Roo Code** | `.roo/commands/` | Markdown |
+| **CodeBuddy** | `.codebuddy/commands/` | Markdown |
+| **Qoder CLI** | `.qoder/commands/` | Markdown |
+| **Amp** | `.agents/commands/` | Markdown |
+| **SHAI** | `.shai/commands/` | Markdown |
+| **IBM Bob** | `.bob/commands/` | Markdown |
+
+Each release includes both **bash** (`-sh-`) and **PowerShell** (`-ps-`) variants.
+
+---
+
+## Documentation
+
+| Topic | File |
+|-------|------|
+| Blog Principles | `refs/1_principles_for_constitution.md` |
+| Writing Best Practices | `refs/2_define_for_specify.md` |
+| Editorial Operations | `refs/3_project_mangement_for_plan.md` |
+| Task Methodology | `refs/4_pm_tasking_for_tasks.md` |
+| Claude Code Setup | `refs/6_claude_code.md` |
+
+---
+
+## Links
+
+- **Releases**: [github.com/agentii-ai/blog-tech-kit/releases](https://github.com/agentii-ai/blog-tech-kit/releases)
+- **Issues**: [github.com/agentii-ai/blog-tech-kit/issues](https://github.com/agentii-ai/blog-tech-kit/issues)
+- **Contributing**: See `CONTRIBUTING.md`
 
 ---
 
 ## License
 
-MIT License - See LICENSE file
-
-## Contributing
-
-See CONTRIBUTING.md for guidelines on contributing to blog-tech-kit
+MIT License - See [LICENSE](LICENSE)
 
 ---
 
-**Version**: v0.0.1
-**Last Updated**: 2025-12-05
-**Status**: MVP Ready for Testing
+**Version**: v0.0.94  
+**Last Updated**: 2025-12-05  
+**Maintainer**: [agentii.ai](https://agentii.ai)
