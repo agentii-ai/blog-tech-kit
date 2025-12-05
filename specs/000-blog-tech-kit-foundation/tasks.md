@@ -163,17 +163,17 @@
 
 ### Implementation for User Story 5
 
-- [ ] T054 [P] [US5] Adapt `tasks-template.md` in `.blogkit/templates/` for content production workflow (replace software tasks with content tasks)
-- [ ] T055 [P] [US5] Update tasks-template.md to organize tasks by: Sprint Organization (by content pillar/post), Platform Setup, Content Creation, Distribution, Validation Checkpoints
-- [ ] T056 [P] [US5] Remove software-specific sections from tasks-template.md: API Integration Tasks, Database Migration Tasks, Backend Service Tasks
-- [ ] T057 [P] [US5] Add content-specific task groups to tasks-template.md: Research & Outline, Draft, Code Examples (if applicable), Technical Review, Copyedit, SEO Optimization, Publish, Distribution
-- [ ] T058 [US5] Create `/blogkit.tasks` slash command in `.blogkit/templates/commands/blogkit.tasks.md`
-- [ ] T059 [US5] Update blogkit.tasks.md to reference `refs/4_pm_tasking_for_tasks.md` and `refs/5_more/tasking_methodology.md` for guidance on task structure
-- [ ] T060 [US5] Update blogkit.tasks.md to organize tasks by content sprint (Sprint 0: Platform Setup, Sprint 1: Foundation Post 1, Sprint 2: Foundation Post 2, etc.)
-- [ ] T061 [US5] Update blogkit.tasks.md to include dependencies (e.g., "Post 1 published" before "Post 2 research begins")
-- [ ] T062 [US5] Update blogkit.tasks.md to include validation checkpoints (sprint-end quality gates: analytics review, SEO ranking check, engagement review)
+- [x] T054 [P] [US5] Adapt `tasks-template.md` in `.blogkit/templates/` for content production workflow (replace software tasks with content tasks)
+- [x] T055 [P] [US5] Update tasks-template.md to organize tasks by: Sprint Organization (by content pillar/post), Platform Setup, Content Creation, Distribution, Validation Checkpoints
+- [x] T056 [P] [US5] Remove software-specific sections from tasks-template.md: API Integration Tasks, Database Migration Tasks, Backend Service Tasks
+- [x] T057 [P] [US5] Add content-specific task groups to tasks-template.md: Research & Outline, Draft, Code Examples (if applicable), Technical Review, Copyedit, SEO Optimization, Publish, Distribution
+- [x] T058 [US5] Create `/blogkit.tasks` slash command in `.blogkit/templates/commands/blogkit.tasks.md`
+- [x] T059 [US5] Update blogkit.tasks.md to reference `refs/4_pm_tasking_for_tasks.md` and `refs/5_more/tasking_methodology.md` for guidance on task structure
+- [x] T060 [US5] Update blogkit.tasks.md to organize tasks by content sprint (Sprint 0: Platform Setup, Sprint 1: Foundation Post 1, Sprint 2: Foundation Post 2, etc.)
+- [x] T061 [US5] Update blogkit.tasks.md to include dependencies (e.g., "Post 1 published" before "Post 2 research begins")
+- [x] T062 [US5] Update blogkit.tasks.md to include validation checkpoints (sprint-end quality gates: analytics review, SEO ranking check, engagement review)
 - [ ] T063 [US5] Test `/blogkit.tasks` in Claude Code: verify tasks.md is organized by sprint with clear dependencies
-- [ ] T064 [US5] Validate task structure: Each post should include all 4 editorial passes (research, draft, review, final edit)
+- [ ] T064 [US5] Validate task structure: Each post should include all 6 editorial phases (research, draft, review, copyedit, publish, measure)
 
 **Checkpoint**: `/blogkit.tasks` command functional - users can generate actionable task lists for content production
 
