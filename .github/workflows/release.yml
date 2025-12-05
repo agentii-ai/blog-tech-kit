@@ -34,7 +34,8 @@ jobs:
             echo "new_version=${{ inputs.version }}" >> $GITHUB_OUTPUT
             echo "Using provided version: ${{ inputs.version }}"
           else
-            NEW_VERSION=$(.github/workflows/scripts/get-next-version.sh)
+            # Script outputs only version to stdout, debug to stderr
+            NEW_VERSION=$(.github/workflows/scripts/get-next-version.sh | tail -n 1)
             echo "new_version=$NEW_VERSION" >> $GITHUB_OUTPUT
             echo "Auto-detected version: $NEW_VERSION"
           fi

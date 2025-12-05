@@ -19,13 +19,9 @@ fi
 PATCH=$((PATCH + 1))
 NEW_VERSION="v${MAJOR}.${MINOR}.${PATCH}"
 
-echo "Latest tag: $LATEST_TAG"
-echo "New version: $NEW_VERSION"
+# Debug info to stderr (not captured by command substitution)
+echo "Latest tag: $LATEST_TAG" >&2
+echo "New version: $NEW_VERSION" >&2
 
-# Output for GitHub Actions
-if [[ -n "${GITHUB_OUTPUT:-}" ]]; then
-  echo "new_version=$NEW_VERSION" >> "$GITHUB_OUTPUT"
-  echo "latest_tag=$LATEST_TAG" >> "$GITHUB_OUTPUT"
-fi
-
+# Only the version to stdout (machine-readable)
 echo "$NEW_VERSION"
