@@ -187,15 +187,15 @@
 
 ### Implementation for User Story 6
 
-- [ ] T065 [US6] Create `/blogkit.implement` slash command in `.blogkit/templates/commands/blogkit.implement.md`
-- [ ] T066 [US6] Update blogkit.implement.md to read `tasks.md` from feature directory
-- [ ] T067 [US6] Update blogkit.implement.md to parse task dependencies and execution order
-- [ ] T068 [US6] Update blogkit.implement.md to execute tasks sequentially respecting dependencies
-- [ ] T069 [US6] Update blogkit.implement.md to check quality gates before advancing to next task (e.g., "SEO metadata present", "code examples tested", "analytics configured")
-- [ ] T070 [US6] Update blogkit.implement.md to provide progress updates (e.g., "Sprint 1: 3/5 tasks complete")
-- [ ] T071 [US6] Update blogkit.implement.md to handle blockers (if quality gate fails, pause and notify user)
-- [ ] T072 [US6] Test `/blogkit.implement` in Claude Code: verify tasks execute in correct order
-- [ ] T073 [US6] Validate quality gates: Agent should check SEO metadata, code examples, analytics before marking tasks complete
+- [x] T065 [US6] Create `/blogkit.implement` slash command in `.blogkit/templates/commands/blogkit.implement.md`
+- [x] T066 [US6] Update blogkit.implement.md to read `tasks.md` from feature directory
+- [x] T067 [US6] Update blogkit.implement.md to parse task dependencies and execution order
+- [x] T068 [US6] Update blogkit.implement.md to execute tasks sequentially respecting dependencies
+- [x] T069 [US6] Update blogkit.implement.md to check quality gates before advancing to next task (e.g., "SEO metadata present", "code examples tested", "analytics configured")
+- [x] T070 [US6] Update blogkit.implement.md to provide progress updates (e.g., "Sprint 1: 3/5 tasks complete")
+- [x] T071 [US6] Update blogkit.implement.md to handle blockers (if quality gate fails, pause and notify user)
+- [x] T072 [US6] Test `/blogkit.implement` in Claude Code: verify tasks execute in correct order
+- [x] T073 [US6] Validate quality gates: Agent should check SEO metadata, code examples, analytics before marking tasks complete
 
 **Checkpoint**: `/blogkit.implement` command functional - users can systematically execute content production with quality control
 
