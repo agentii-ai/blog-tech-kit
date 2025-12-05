@@ -1,0 +1,129 @@
+name: Release Blog-Tech-Kit Templates
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.blogkit/**'
+      - '.github/workflows/scripts/**'
+  workflow_dispatch:
+    inputs:
+      version:
+        description: 'Version to release (e.g., v0.1.0). Leave empty for auto-increment.'
+        required: false
+        type: string
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Get next version
+        id: version
+        run: |
+          chmod +x .github/workflows/scripts/get-next-version.sh
+          
+          if [[ -n "${{ inputs.version }}" ]]; then
+            echo "new_version=${{ inputs.version }}" >> $GITHUB_OUTPUT
+            echo "Using provided version: ${{ inputs.version }}"
+          else
+            NEW_VERSION=$(.github/workflows/scripts/get-next-version.sh)
+            echo "new_version=$NEW_VERSION" >> $GITHUB_OUTPUT
+            echo "Auto-detected version: $NEW_VERSION"
+          fi
+
+      - name: Check if release exists
+        id: check_release
+        run: |
+          chmod +x .github/workflows/scripts/check-release-exists.sh
+          
+          if .github/workflows/scripts/check-release-exists.sh "${{ steps.version.outputs.new_version }}"; then
+            echo "exists=true" >> $GITHUB_OUTPUT
+            echo "Release ${{ steps.version.outputs.new_version }} already exists, skipping."
+          else
+            echo "exists=false" >> $GITHUB_OUTPUT
+            echo "Release ${{ steps.version.outputs.new_version }} does not exist, proceeding."
+          fi
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Create release packages
+        if: steps.check_release.outputs.exists == 'false'
+        run: |
+          chmod +x .github/workflows/scripts/create-release-packages.sh
+          .github/workflows/scripts/create-release-packages.sh "${{ steps.version.outputs.new_version }}"
+          
+          echo "Generated packages:"
+          ls -la .genreleases/*.zip | wc -l
+          echo "files"
+
+      - name: Validate release packages
+        if: steps.check_release.outputs.exists == 'false'
+        run: |
+          chmod +x scripts/test-auto-release.sh
+          
+          # Run validation tests (skip reference comparison in CI)
+          echo "Running package validation..."
+          
+          # Quick validation: check ZIP count and structure
+          ZIP_COUNT=$(ls -1 .genreleases/*.zip 2>/dev/null | wc -l)
+          echo "ZIP files created: $ZIP_COUNT"
+          
+          if [[ "$ZIP_COUNT" -lt 30 ]]; then
+            echo "ERROR: Expected at least 30 ZIP files, got $ZIP_COUNT"
+            exit 1
+          fi
+          
+          # Spot-check one variant
+          unzip -q -d /tmp/validate-check .genreleases/spec-kit-template-claude-sh-*.zip
+          
+          if [[ -d "/tmp/validate-check/spec-kit-template-claude-sh-${{ steps.version.outputs.new_version }}/.blogkit" ]]; then
+            echo "✅ Package structure validated"
+          else
+            echo "❌ Package structure invalid"
+            exit 1
+          fi
+          
+          # Check for blogkit commands
+          CMD_COUNT=$(ls -1 /tmp/validate-check/spec-kit-template-claude-sh-*/.claude/commands/blogkit.*.md 2>/dev/null | wc -l)
+          if [[ "$CMD_COUNT" -eq 9 ]]; then
+            echo "✅ Command count validated: $CMD_COUNT"
+          else
+            echo "❌ Expected 9 commands, got $CMD_COUNT"
+            exit 1
+          fi
+
+      - name: Generate release notes
+        if: steps.check_release.outputs.exists == 'false'
+        id: release_notes
+        run: |
+          chmod +x .github/workflows/scripts/generate-release-notes.sh
+          .github/workflows/scripts/generate-release-notes.sh "${{ steps.version.outputs.new_version }}"
+          
+          echo "Release notes generated"
+
+      - name: Create GitHub release
+        if: steps.check_release.outputs.exists == 'false'
+        run: |
+          chmod +x .github/workflows/scripts/create-github-release.sh
+          .github/workflows/scripts/create-github-release.sh "${{ steps.version.outputs.new_version }}"
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Summary
+        if: steps.check_release.outputs.exists == 'false'
+        run: |
+          echo "## 🚀 Release Created" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "**Version:** ${{ steps.version.outputs.new_version }}" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "**Packages:** $(ls -1 .genreleases/*.zip | wc -l) template variants" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "View the release: https://github.com/${{ github.repository }}/releases/tag/${{ steps.version.outputs.new_version }}" >> $GITHUB_STEP_SUMMARY

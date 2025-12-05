@@ -36,7 +36,7 @@ $COMMITS
 
 ## Assets
 
-36 template variants (18 agents × 2 script types) with SHA-256 checksums:
+34 template variants (17 agents × 2 script types) with SHA-256 checksums:
 
 EOF
 
