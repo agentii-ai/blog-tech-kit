@@ -114,16 +114,16 @@
 
 ### Implementation for User Story 3
 
-- [ ] T031 [P] [US3] Adapt `spec-template.md` in `.blogkit/templates/` for blog content strategy (replace software sections with blog sections)
-- [ ] T032 [P] [US3] Update spec-template.md to include: Blog Type Declaration, Target Audience, Content Pillars, Publishing Cadence, Success Criteria, Distribution Requirements
-- [ ] T033 [P] [US3] Remove software-specific sections from spec-template.md: Technical Architecture, API Specs, Database Schemas, Code Structure
-- [ ] T034 [P] [US3] Add validation prompts to spec-template.md: "NO technology choices in spec phase" (enforces Content-First principle)
-- [ ] T035 [US3] Create `/blogkit.specify` slash command in `.blogkit/templates/commands/blogkit.specify.md`
-- [ ] T036 [US3] Update blogkit.specify.md to reference `refs/2_define_for_specify.md` for guidance on blog writing best practices
-- [ ] T037 [US3] Update blogkit.specify.md to enforce Content-First principle (reject CMS, framework, hosting mentions)
-- [ ] T038 [US3] Update blogkit.specify.md to create new feature branch (e.g., `001-authority-blog-ml-engineers`)
-- [ ] T039 [US3] Update blogkit.specify.md to generate `specs/NNN-feature-name/spec.md` using adapted blog template
-- [ ] T040 [US3] Test `/blogkit.specify` in Claude Code: verify spec.md is created with blog-specific sections
+- [x] T031 [P] [US3] Adapt `spec-template.md` in `.blogkit/templates/` for blog content strategy (replace software sections with blog sections)
+- [x] T032 [P] [US3] Update spec-template.md to include: Blog Type Declaration, Target Audience, Content Pillars, Publishing Cadence, Success Criteria, Distribution Requirements
+- [x] T033 [P] [US3] Remove software-specific sections from spec-template.md: Technical Architecture, API Specs, Database Schemas, Code Structure
+- [x] T034 [P] [US3] Add validation prompts to spec-template.md: "NO technology choices in spec phase" (enforces Content-First principle)
+- [x] T035 [US3] Create `/blogkit.specify` slash command in `.blogkit/templates/commands/blogkit.specify.md`
+- [x] T036 [US3] Update blogkit.specify.md to reference `refs/2_define_for_specify.md` for guidance on blog writing best practices
+- [x] T037 [US3] Update blogkit.specify.md to enforce Content-First principle (reject CMS, framework, hosting mentions)
+- [x] T038 [US3] Update blogkit.specify.md to create new feature branch (e.g., `001-authority-blog-ml-engineers`)
+- [x] T039 [US3] Update blogkit.specify.md to generate `specs/NNN-feature-name/spec.md` using adapted blog template
+- [x] T040 [US3] Test `/blogkit.specify` in Claude Code: verify spec.md is created with blog-specific sections
 - [ ] T041 [US3] Validate Content-First gate: spec.md should contain ZERO technology implementation details
 
 **Checkpoint**: `/blogkit.specify` command functional - users can create blog content strategy specifications following blog-tech-kit principles
