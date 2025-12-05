@@ -34,12 +34,12 @@
 
 **Note**: Blog-tech-kit is a fork of spec-kit. Most infrastructure already exists. Setup focuses on verification and preparation.
 
-- [ ] T001 Verify existing project structure matches plan.md specifications
-- [ ] T002 Verify Python 3.11+ environment and `uv` package manager installed
-- [ ] T003 [P] Verify Git repository initialized and on feature branch `000-blog-tech-kit-foundation`
-- [ ] T004 [P] Verify `.specify/` directory structure exists with memory/, scripts/, templates/ subdirectories
-- [ ] T005 [P] Verify existing reference documentation in `refs/` directory (5 core files + 5_more/)
-- [ ] T006 Verify pyproject.toml configured with package name `blog-cli` and command `blog`
+- [x] T001 Verify existing project structure matches plan.md specifications
+- [x] T002 Verify Python 3.11+ environment and `uv` package manager installed
+- [x] T003 [P] Verify Git repository initialized and on feature branch `000-blog-tech-kit-foundation`
+- [x] T004 [P] Verify `.specify/` directory structure exists with memory/, scripts/, templates/ subdirectories
+- [x] T005 [P] Verify existing reference documentation in `refs/` directory (5 core files + 5_more/)
+- [x] T006 Verify pyproject.toml configured with package name `blog-cli` and command `blog`
 
 **Checkpoint**: Environment validated - blog-tech-kit implementation can begin
 
@@ -51,11 +51,11 @@
 
 **⚠️ CRITICAL**: No user story work can begin until this phase is complete
 
-- [ ] T007 Verify constitution.md contains blog-specific principles (8 Core Blog Principles, Blog-Specific Constraints, Quality Gates)
-- [ ] T008 Verify namespace strategy documented in constitution.md (CLI separation, slash command namespacing, shared .specify/ directory)
-- [ ] T009 [P] Create placeholder blog-specific templates in `.specify/templates/` (spec-template.md, plan-template.md, tasks-template.md - will be adapted in Phase 3)
-- [ ] T010 [P] Create placeholder slash command templates in `.specify/templates/commands/` (blogkit.*.md files - will be adapted in Phase 4)
-- [ ] T011 Verify reference documentation structure complete (`refs/0_overview.md`, `refs/1_principles_for_constitution.md`, `refs/2_define_for_specify.md`, `refs/3_project_mangement_for_plan.md`, `refs/4_pm_tasking_for_tasks.md`, `refs/6_claude_code.md`, `refs/5_more/`)
+- [x] T007 Verify constitution.md contains blog-specific principles (8 Core Blog Principles, Blog-Specific Constraints, Quality Gates)
+- [x] T008 Verify namespace strategy documented in constitution.md (CLI separation, slash command namespacing, shared .specify/ directory)
+- [x] T009 [P] Create placeholder blog-specific templates in `.specify/templates/` (spec-template.md, plan-template.md, tasks-template.md - will be adapted in Phase 3)
+- [x] T010 [P] Create placeholder slash command templates in `.specify/templates/commands/` (blogkit.*.md files - will be adapted in Phase 4)
+- [x] T011 Verify reference documentation structure complete (`refs/0_overview.md`, `refs/1_principles_for_constitution.md`, `refs/2_define_for_specify.md`, `refs/3_project_mangement_for_plan.md`, `refs/4_pm_tasking_for_tasks.md`, `refs/6_claude_code.md`, `refs/5_more/`)
 
 **Checkpoint**: Foundation ready - user story implementation can now begin
 
