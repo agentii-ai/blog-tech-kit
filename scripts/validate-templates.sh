@@ -32,14 +32,8 @@ check_frontmatter_namespace() {
   local variant_name=$2
   local errors=0
 
-  # TEMPORARY: Skip validation for Copilot templates until directory structure is fixed
-  if [[ "$variant_name" == *"copilot"* ]]; then
-    print_warn "Skipping Copilot validation (known issue with directory structure)"
-    return 0
-  fi
-
-  # Find agent directory (anything starting with . except .blog)
-  local agent_dir=$(find "$extract_dir" -maxdepth 1 -type d -name ".*" ! -name ".blog" | head -1)
+  # Find agent directory (anything starting with . except .blogkit)
+  local agent_dir=$(find "$extract_dir" -maxdepth 1 -type d -name ".*" ! -name ".blogkit" | head -1)
   if [[ -z "$agent_dir" ]]; then
     print_fail "No agent directory found (expected .{agent}/)"
     return 1
@@ -88,10 +82,10 @@ check_required_files() {
   local errors=0
 
   local required_files=(
-    ".blog/memory/constitution.md"
-    ".blog/templates/spec-template.md"
-    ".blog/templates/plan-template.md"
-    ".blog/templates/tasks-template.md"
+    ".blogkit/memory/constitution.md"
+    ".blogkit/templates/spec-template.md"
+    ".blogkit/templates/plan-template.md"
+    ".blogkit/templates/tasks-template.md"
   )
 
   for file in "${required_files[@]}"; do
@@ -130,17 +124,17 @@ check_directory_structure() {
   local extract_dir=$1
   local errors=0
 
-  # Verify .blog directory
-  if [[ ! -d "$extract_dir/.blog" ]]; then
-    print_fail "Missing .blog directory"
+  # Verify .blogkit directory
+  if [[ ! -d "$extract_dir/.blogkit" ]]; then
+    print_fail "Missing .blogkit directory"
     return 1
   fi
 
   # Verify subdirectories
   local required_dirs=("memory" "scripts" "templates")
   for dir in "${required_dirs[@]}"; do
-    if [[ ! -d "$extract_dir/.blog/$dir" ]]; then
-      print_fail "Missing .blog/$dir directory"
+    if [[ ! -d "$extract_dir/.blogkit/$dir" ]]; then
+      print_fail "Missing .blogkit/$dir directory"
       ((errors++))
     fi
   done
@@ -157,18 +151,18 @@ check_directory_structure() {
 check_constitution_version() {
   local extract_dir=$1
 
-  if [[ ! -f "$extract_dir/.blog/memory/constitution.md" ]]; then
+  if [[ ! -f "$extract_dir/.blogkit/memory/constitution.md" ]]; then
     print_fail "Constitution file not found"
     return 1
   fi
 
-  # Check for blog-Kit constitution header
-  if ! grep -q "blog-Kit Constitution" "$extract_dir/.blog/memory/constitution.md"; then
-    print_fail "Not a blog-Kit constitution (missing 'blog-Kit Constitution' header)"
+  # Check for Blog-Tech-Kit constitution header
+  if ! grep -q "Blog-Tech-Kit Constitution" "$extract_dir/.blogkit/memory/constitution.md"; then
+    print_fail "Not a Blog-Tech-Kit constitution (missing 'Blog-Tech-Kit Constitution' header)"
     return 1
   fi
 
-  print_pass "Constitution is blog-Kit v1.0.0"
+  print_pass "Constitution is Blog-Tech-Kit v1.0.0"
   return 0
 }
 
@@ -191,19 +185,19 @@ check_script_consistency() {
 
   # Check script directories
   if [[ "$script_type" == "sh" ]]; then
-    if [[ ! -d "$extract_dir/.blog/scripts/bash" ]]; then
+    if [[ ! -d "$extract_dir/.blogkit/scripts/bash" ]]; then
       print_fail "Script type is 'sh' but no bash/ scripts directory found"
       return 1
     fi
-    if [[ -d "$extract_dir/.blog/scripts/powershell" ]]; then
+    if [[ -d "$extract_dir/.blogkit/scripts/powershell" ]]; then
       print_warn "Script type is 'sh' but powershell/ directory found (should not exist)"
     fi
   elif [[ "$script_type" == "ps" ]]; then
-    if [[ ! -d "$extract_dir/.blog/scripts/powershell" ]]; then
+    if [[ ! -d "$extract_dir/.blogkit/scripts/powershell" ]]; then
       print_fail "Script type is 'ps' but no powershell/ scripts directory found"
       return 1
     fi
-    if [[ -d "$extract_dir/.blog/scripts/bash" ]]; then
+    if [[ -d "$extract_dir/.blogkit/scripts/bash" ]]; then
       print_warn "Script type is 'ps' but bash/ directory found (should not exist)"
     fi
   fi
@@ -250,15 +244,23 @@ validate_variant() {
     return 1
   fi
 
+  # Find the template root directory (the top-level directory in the ZIP)
+  local template_root=$(find "$temp_extract" -mindepth 1 -maxdepth 1 -type d | head -1)
+  if [[ -z "$template_root" ]]; then
+    ((FAILED_VARIANTS++))
+    FAILED_LIST="$FAILED_LIST\n  • $variant_name (no root directory found)"
+    return 1
+  fi
+
   # Run all validation checks
   local check_errors=0
 
-  check_frontmatter_namespace "$temp_extract" "$variant_name" || ((check_errors++))
-  check_required_files "$temp_extract" || ((check_errors++))
-  check_content_references "$temp_extract" || ((check_errors++))
-  check_directory_structure "$temp_extract" || ((check_errors++))
-  check_constitution_version "$temp_extract" || ((check_errors++))
-  check_script_consistency "$temp_extract" "$variant_name" || ((check_errors++))
+  check_frontmatter_namespace "$template_root" "$variant_name" || ((check_errors++))
+  check_required_files "$template_root" || ((check_errors++))
+  check_content_references "$template_root" || ((check_errors++))
+  check_directory_structure "$template_root" || ((check_errors++))
+  check_constitution_version "$template_root" || ((check_errors++))
+  check_script_consistency "$template_root" "$variant_name" || ((check_errors++))
 
   if [[ $check_errors -eq 0 ]]; then
     echo "  ✅ VALIDATION PASSED"
@@ -280,7 +282,7 @@ main() {
   fi
 
   echo "╔════════════════════════════════════════════════════════════╗"
-  echo "║     blog-Kit Template Validator                             ║"
+  echo "║     Blog-Tech-Kit Template Validator                      ║"
   echo "╚════════════════════════════════════════════════════════════╝"
   echo ""
 
