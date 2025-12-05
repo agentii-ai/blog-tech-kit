@@ -148,8 +148,8 @@
 - [x] T049 [US4] Update blogkit.plan.md to enforce Simplicity & Focus principle (no custom CMS before 10 posts, no over-engineering)
 - [x] T050 [US4] Update blogkit.plan.md to generate `research.md` if NEEDS CLARIFICATION markers exist in Technical Context
 - [x] T051 [US4] Update blogkit.plan.md to generate `quickstart.md` with getting-started guide for first post
-- [ ] T052 [US4] Test `/blogkit.plan` in Claude Code: verify plan.md includes editorial workflow, tech stack, AI optimization, distribution strategy
-- [ ] T053 [US4] Validate Simplicity & Focus gate: plan.md should pass "Complexity Review" (no over-engineering detected)
+- [x] T052 [US4] Test `/blogkit.plan` in Claude Code: verify plan.md includes editorial workflow, tech stack, AI optimization, distribution strategy
+- [x] T053 [US4] Validate Simplicity & Focus gate: plan.md should pass "Complexity Review" (no over-engineering detected)
 
 **Checkpoint**: `/blogkit.plan` command functional - users can create technical implementation plans that respect blog-tech-kit principles
 
@@ -172,8 +172,8 @@
 - [x] T060 [US5] Update blogkit.tasks.md to organize tasks by content sprint (Sprint 0: Platform Setup, Sprint 1: Foundation Post 1, Sprint 2: Foundation Post 2, etc.)
 - [x] T061 [US5] Update blogkit.tasks.md to include dependencies (e.g., "Post 1 published" before "Post 2 research begins")
 - [x] T062 [US5] Update blogkit.tasks.md to include validation checkpoints (sprint-end quality gates: analytics review, SEO ranking check, engagement review)
-- [ ] T063 [US5] Test `/blogkit.tasks` in Claude Code: verify tasks.md is organized by sprint with clear dependencies
-- [ ] T064 [US5] Validate task structure: Each post should include all 6 editorial phases (research, draft, review, copyedit, publish, measure)
+- [x] T063 [US5] Test `/blogkit.tasks` in Claude Code: verify tasks.md is organized by sprint with clear dependencies
+- [x] T064 [US5] Validate task structure: Each post should include all 6 editorial phases (research, draft, review, copyedit, publish, measure)
 
 **Checkpoint**: `/blogkit.tasks` command functional - users can generate actionable task lists for content production
 
@@ -205,21 +205,21 @@
 
 **Goal**: Provide additional workflow commands for content quality validation and cross-artifact analysis
 
-**Independent Test**: Run `/blogkit.clarify`, `/blogkit.checklist`, `/blogkit.analyze`, `/blogkit.taskstoissues`. Verify each produces expected output.
+**Independent Test**: Run `/blogkit.clarify`, `/blogkit.checklist`, `/blogkit.analyze`, `/blogkit.taskstoissues`, `/blogkit.constitution`. Verify each produces expected output.
 
 ### Implementation for Additional Commands
 
-- [ ] T074 [P] Create `/blogkit.clarify` slash command in `.blogkit/templates/commands/blogkit.clarify.md` (structured Q&A to resolve underspecified requirements)
-- [ ] T075 [P] Update blogkit.clarify.md to ask maximum 3 clarification questions prioritized by impact (scope > security > UX)
-- [ ] T076 [P] Update blogkit.clarify.md to document clarifications in spec.md "Clarifications" section
-- [ ] T077 [P] Create `/blogkit.checklist` slash command in `.blogkit/templates/commands/blogkit.checklist.md` (generate custom quality checklists)
-- [ ] T078 [P] Update blogkit.checklist.md to generate checklists based on blog type (e.g., SEO optimization checklist, editorial review checklist)
-- [ ] T079 [P] Create `/blogkit.analyze` slash command in `.blogkit/templates/commands/blogkit.analyze.md` (cross-artifact consistency analysis)
-- [ ] T080 [P] Update blogkit.analyze.md to check consistency between spec.md, plan.md, tasks.md (identify gaps, inconsistencies)
-- [ ] T081 [P] Create `/blogkit.taskstoissues` slash command in `.blogkit/templates/commands/blogkit.taskstoissues.md` (convert tasks to GitHub issues)
-- [ ] T082 [P] Update blogkit.taskstoissues.md to create GitHub issues with dependencies, labels, milestones
-- [ ] T083 [P] Create `/blogkit.constitution` slash command in `.blogkit/templates/commands/blogkit.constitution.md` (create or update blog governance principles)
-- [ ] T084 [P] Update blogkit.constitution.md to update `.blogkit/memory/constitution.md` with blog-specific principles
+- [x] T074 [P] Create `/blogkit.clarify` slash command in `.blogkit/templates/commands/blogkit.clarify.md` (structured Q&A to resolve underspecified requirements)
+- [x] T075 [P] Update blogkit.clarify.md to ask maximum 3 clarification questions prioritized by impact (scope > quality > distribution)
+- [x] T076 [P] Update blogkit.clarify.md to document clarifications in spec.md "Clarifications" section
+- [x] T077 [P] Create `/blogkit.checklist` slash command in `.blogkit/templates/commands/blogkit.checklist.md` (generate custom quality checklists)
+- [x] T078 [P] Update blogkit.checklist.md to generate checklists based on blog type (e.g., SEO optimization checklist, editorial review checklist)
+- [x] T079 [P] Create `/blogkit.analyze` slash command in `.blogkit/templates/commands/blogkit.analyze.md` (cross-artifact consistency analysis)
+- [x] T080 [P] Update blogkit.analyze.md to check consistency between spec.md, plan.md, tasks.md (identify gaps, inconsistencies)
+- [x] T081 [P] Create `/blogkit.taskstoissues` slash command in `.blogkit/templates/commands/blogkit.taskstoissues.md` (convert tasks to GitHub issues)
+- [x] T082 [P] Update blogkit.taskstoissues.md to create GitHub issues with dependencies, labels, milestones
+- [x] T083 [P] Create `/blogkit.constitution` slash command in `.blogkit/templates/commands/blogkit.constitution.md` (create or update blog governance principles)
+- [x] T084 [P] Update blogkit.constitution.md to update `.blogkit/memory/constitution.md` with blog-specific principles
 - [ ] T085 Test all additional slash commands: verify each produces expected output without errors
 
 **Checkpoint**: All 9 slash commands functional - complete blog-tech-kit workflow available
