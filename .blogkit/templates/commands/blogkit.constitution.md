@@ -7,7 +7,7 @@
 **Status**: PLACEHOLDER - Full implementation in Phase 9 (T083-T084)
 
 This slash command will:
-1. Read existing `.specify/memory/constitution.md` or create new
+1. Read existing `.blogkit/memory/constitution.md` or create new
 2. Prompt for blog-specific principles (8 Core Blog Principles)
 3. Update constitution with blog governance framework
 4. Ensure all dependent templates reference updated constitution

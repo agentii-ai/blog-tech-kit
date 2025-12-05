@@ -764,6 +764,105 @@ def download_template_from_github(ai_assistant: str, download_dir: Path, *, scri
     }
     return zip_path, metadata
 
+def copy_local_template(project_path: Path, ai_assistant: str, script_type: str, is_current_dir: bool = False, *, verbose: bool = True, tracker: StepTracker | None = None) -> Path:
+    """Copy template from local .blogkit/ directory (for development).
+    Returns project_path. Uses tracker if provided.
+    """
+    # Check if we're in the blog-tech-kit repository (has .blogkit/ directory)
+    repo_root = Path.cwd()
+    while repo_root != repo_root.parent:
+        blogkit_dir = repo_root / ".blogkit"
+        if blogkit_dir.exists() and blogkit_dir.is_dir():
+            break
+        repo_root = repo_root.parent
+    else:
+        # Not in blog-tech-kit repo, cannot use local template
+        raise FileNotFoundError("Local .blogkit/ directory not found. Run this command from within the blog-tech-kit repository or use the installed version that downloads from GitHub releases.")
+
+    blogkit_dir = repo_root / ".blogkit"
+
+    if tracker:
+        tracker.start("local-copy", f"Copying from {blogkit_dir.name}/")
+    elif verbose:
+        console.print(f"[cyan]Copying local template from {blogkit_dir}...[/cyan]")
+
+    try:
+        if not is_current_dir:
+            project_path.mkdir(parents=True, exist_ok=True)
+
+        # Copy .blogkit/ directory structure to new project
+        dest_blogkit = project_path / ".blogkit"
+        if dest_blogkit.exists():
+            if verbose and not tracker:
+                console.print(f"[yellow]Merging with existing .blogkit/ directory[/yellow]")
+
+        # Copy constitution
+        src_constitution = blogkit_dir / "memory" / "constitution.md"
+        dest_constitution = dest_blogkit / "memory" / "constitution.md"
+        if src_constitution.exists():
+            dest_constitution.parent.mkdir(parents=True, exist_ok=True)
+            shutil.copy2(src_constitution, dest_constitution)
+            if verbose and not tracker:
+                console.print(f"[green]✓[/green] Copied constitution.md")
+
+        # Copy templates
+        src_templates = blogkit_dir / "templates"
+        dest_templates = dest_blogkit / "templates"
+        if src_templates.exists():
+            dest_templates.mkdir(parents=True, exist_ok=True)
+            for template_file in src_templates.glob("*.md"):
+                shutil.copy2(template_file, dest_templates / template_file.name)
+                if verbose and not tracker:
+                    console.print(f"[green]✓[/green] Copied {template_file.name}")
+
+        # Copy bash scripts
+        src_scripts = blogkit_dir / "scripts" / "bash"
+        dest_scripts = dest_blogkit / "scripts" / "bash"
+        if src_scripts.exists():
+            dest_scripts.mkdir(parents=True, exist_ok=True)
+            for script_file in src_scripts.glob("*.sh"):
+                dest_file = dest_scripts / script_file.name
+                shutil.copy2(script_file, dest_file)
+                # Make executable
+                dest_file.chmod(dest_file.stat().st_mode | 0o111)
+                if verbose and not tracker:
+                    console.print(f"[green]✓[/green] Copied {script_file.name}")
+
+        # Copy slash command templates to agent-specific directory
+        agent_config = AGENT_CONFIG.get(ai_assistant, {})
+        agent_folder = agent_config.get("folder", ".claude/")
+        agent_dir_name = agent_folder.rstrip("/")
+
+        src_commands = blogkit_dir / "templates" / "commands"
+        dest_commands = project_path / agent_dir_name / "commands"
+        if src_commands.exists():
+            dest_commands.mkdir(parents=True, exist_ok=True)
+            for cmd_file in src_commands.glob("blogkit.*.md"):
+                shutil.copy2(cmd_file, dest_commands / cmd_file.name)
+                if verbose and not tracker:
+                    console.print(f"[green]✓[/green] Copied {cmd_file.name} to {agent_dir_name}/commands/")
+
+        # Copy specs directory structure
+        specs_dir = project_path / "specs"
+        specs_dir.mkdir(exist_ok=True)
+
+        if tracker:
+            tracker.complete("local-copy", f"Template copied from {blogkit_dir.name}/")
+        elif verbose:
+            console.print(f"[green]✓ Local template copied successfully[/green]")
+
+        return project_path
+
+    except Exception as e:
+        if tracker:
+            tracker.error("local-copy", str(e))
+        else:
+            if verbose:
+                console.print(f"[red]Error copying local template:[/red] {e}")
+        if not is_current_dir and project_path.exists():
+            shutil.rmtree(project_path)
+        raise typer.Exit(1)
+
 def download_and_extract_template(project_path: Path, ai_assistant: str, script_type: str, is_current_dir: bool = False, *, verbose: bool = True, tracker: StepTracker | None = None, client: httpx.Client = None, debug: bool = False, github_token: str = None) -> Path:
     """Download the latest release and extract it to create a new project.
     Returns project_path. Uses tracker if provided (with keys: fetch, download, extract, cleanup)
@@ -1136,11 +1235,26 @@ def init(
     with Live(tracker.render(), console=console, refresh_per_second=8, transient=True) as live:
         tracker.attach_refresh(lambda: live.update(tracker.render()))
         try:
-            verify = not skip_tls
-            local_ssl_context = ssl_context if verify else False
-            local_client = httpx.Client(verify=local_ssl_context)
+            # Try local template copy first (for development)
+            repo_root = Path.cwd()
+            while repo_root != repo_root.parent:
+                if (repo_root / ".blogkit").exists():
+                    try:
+                        copy_local_template(project_path, selected_ai, selected_script, here, verbose=False, tracker=tracker)
+                        break
+                    except Exception as e:
+                        # Local copy failed, fall back to GitHub download
+                        if debug:
+                            console.print(f"[yellow]Local copy failed: {e}[/yellow]")
+                        break
+                repo_root = repo_root.parent
+            else:
+                # Not in blog-tech-kit repo, use GitHub download
+                verify = not skip_tls
+                local_ssl_context = ssl_context if verify else False
+                local_client = httpx.Client(verify=local_ssl_context)
 
-            download_and_extract_template(project_path, selected_ai, selected_script, here, verbose=False, tracker=tracker, client=local_client, debug=debug, github_token=github_token)
+                download_and_extract_template(project_path, selected_ai, selected_script, here, verbose=False, tracker=tracker, client=local_client, debug=debug, github_token=github_token)
 
             ensure_executable_scripts(project_path, tracker=tracker)
 
