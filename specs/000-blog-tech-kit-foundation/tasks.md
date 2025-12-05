@@ -282,16 +282,16 @@
 
 ### Implementation for Multi-Kit Validation
 
-- [ ] T108 Test CLI Installation: Install both `specify-cli` and `blog-cli` using `uv tool install`
-- [ ] T109 Verify both commands available: `specify --help` and `blog --help` both work
-- [ ] T110 Test project initialization: Create 3 projects (`specify init test-1`, `blog init test-2`, `pm init test-3` when pm-kit available)
-- [ ] T111 Verify dedicated directory structure: blog-tech-kit uses `.blogkit/` (separate from spec-kit's `.specify/`)
-- [ ] T112 Verify constitution coexistence: `.blogkit/memory/constitution.md` contains correct constitution based on active kit (identified by header comment)
-- [ ] T113 Test slash command isolation: In Claude Code, verify `/speckit.plan` and `/blogkit.plan` both available in autocomplete
-- [ ] T114 Test workflow trigger: Verify `/speckit.plan` triggers software plan, `/blogkit.plan` triggers blog plan (distinct workflows)
-- [ ] T115 Verify agent context files: `.claude/commands/` contains both `speckit.*` and `blogkit.*` files without collision
-- [ ] T116 Test kit switching: Run `blog init --here --force` in existing spec-kit project, verify constitution and slash commands update cleanly
-- [ ] T117 Document multi-kit coexistence test results in `specs/000-blog-tech-kit-foundation/validation-report.md`
+- [x] T108 Test CLI Installation: Install both `specify-cli` and `blog-cli` using `uv tool install`
+- [x] T109 Verify both commands available: `specify --help` and `blog --help` both work
+- [x] T110 Test project initialization: Create 3 projects (`specify init test-1`, `blog init test-2`, `pm init test-3` when pm-kit available)
+- [x] T111 Verify dedicated directory structure: blog-tech-kit uses `.blogkit/` (separate from spec-kit's `.specify/`)
+- [x] T112 Verify constitution coexistence: `.blogkit/memory/constitution.md` contains correct constitution based on active kit (identified by header comment)
+- [x] T113 Test slash command isolation: In Claude Code, verify `/speckit.plan` and `/blogkit.plan` both available in autocomplete
+- [x] T114 Test workflow trigger: Verify `/speckit.plan` triggers software plan, `/blogkit.plan` triggers blog plan (distinct workflows)
+- [x] T115 Verify agent context files: `.claude/commands/` contains both `speckit.*` and `blogkit.*` files without collision
+- [x] T116 Test kit switching: Run `blog init --here --force` in existing spec-kit project, verify constitution and slash commands update cleanly
+- [x] T117 Document multi-kit coexistence test results in `specs/000-blog-tech-kit-foundation/validation-report.md`
 
 **Checkpoint**: Multi-kit coexistence validated - spec-kit and blog-tech-kit work together without conflicts
 
@@ -301,19 +301,19 @@
 
 **Purpose**: Final improvements, documentation, and validation
 
-- [ ] T118 [P] Update README.md with blog-tech-kit overview, installation instructions, and workflow guide
-- [ ] T119 [P] Create comprehensive CHANGELOG.md documenting changes from spec-kit to blog-tech-kit
-- [ ] T120 [P] Update pyproject.toml metadata (description, keywords, author, repository URL)
-- [ ] T121 [P] Add LICENSE file (MIT license from spec-kit)
-- [ ] T122 [P] Create CONTRIBUTING.md with guidelines for future kit variant creators
-- [ ] T123 [P] Document namespace strategy in README.md (CLI separation, slash command namespacing, dedicated `.blogkit/` directory)
-- [ ] T124 [P] Add troubleshooting section to README.md (common issues, solutions)
-- [ ] T125 [P] Create quickstart guide in README.md (5-step process: install → constitution → specify → plan → tasks → implement)
-- [ ] T126 Validate all slash commands work in Claude Code (test each `/blogkit.*` command)
-- [ ] T127 Validate all templates generate correct output (test spec, plan, tasks generation)
-- [ ] T128 Validate constitution principles are enforced (test Content-First gate, Simplicity & Focus gate)
-- [ ] T129 Run final integration test: Complete end-to-end workflow (blog init → constitution → specify → plan → tasks → implement)
-- [ ] T130 Generate validation report documenting all tests passed
+- [x] T118 [P] Update README.md with blog-tech-kit overview, installation instructions, and workflow guide
+- [x] T119 [P] Create comprehensive CHANGELOG.md documenting changes from spec-kit to blog-tech-kit
+- [x] T120 [P] Update pyproject.toml metadata (description, keywords, author, repository URL)
+- [x] T121 [P] Add LICENSE file (MIT license from spec-kit)
+- [x] T122 [P] Create CONTRIBUTING.md with guidelines for future kit variant creators
+- [x] T123 [P] Document namespace strategy in README.md (CLI separation, slash command namespacing, dedicated `.blogkit/` directory)
+- [x] T124 [P] Add troubleshooting section to README.md (common issues, solutions)
+- [x] T125 [P] Create quickstart guide in README.md (5-step process: install → constitution → specify → plan → tasks → implement)
+- [x] T126 Validate all slash commands work in Claude Code (test each `/blogkit.*` command)
+- [x] T127 Validate all templates generate correct output (test spec, plan, tasks generation)
+- [x] T128 Validate constitution principles are enforced (test Content-First gate, Simplicity & Focus gate)
+- [x] T129 Run final integration test: Complete end-to-end workflow (blog init → constitution → specify → plan → tasks → implement)
+- [x] T130 Generate validation report documenting all tests passed
 
 **Checkpoint**: Blog-tech-kit ready for release - all features functional, documentation complete, multi-kit coexistence validated
 

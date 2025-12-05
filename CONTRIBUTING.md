@@ -1,150 +1,313 @@
-# Contributing to Spec Kit
+# Contributing to Blog-Tech-Kit
 
-Hi there! We're thrilled that you'd like to contribute to Spec Kit. Contributions to this project are [released](https://help.github.com/articles/github-terms-of-service/#6-contributions-under-repository-license) to the public under the [project's open source license](LICENSE).
+Thank you for your interest in contributing to blog-tech-kit! This guide explains how to contribute and how to create new kit variants using the same framework.
 
-Please note that this project is released with a [Contributor Code of Conduct](CODE_OF_CONDUCT.md). By participating in this project you agree to abide by its terms.
+## Code of Conduct
 
-## Prerequisites for running and testing code
+This project is forked from spec-kit and maintains the same ethical standards:
+- Treat all community members with respect
+- Provide constructive feedback
+- Focus on ideas and improvements, not personalities
+- Help create an inclusive community
 
-These are one time installations required to be able to test your changes locally as part of the pull request (PR) submission process.
+## Types of Contributions
 
-1. Install [Python 3.11+](https://www.python.org/downloads/)
-1. Install [uv](https://docs.astral.sh/uv/) for package management
-1. Install [Git](https://git-scm.com/downloads)
-1. Have an [AI coding agent available](README.md#-supported-ai-agents)
+### 1. Bug Reports
 
-<details>
-<summary><b>💡 Hint if you are using <code>VSCode</code> or <code>GitHub Codespaces</code> as your IDE</b></summary>
+Found an issue? Please report it!
 
-<br>
+**What to include**:
+- How to reproduce the issue
+- Expected behavior vs. actual behavior
+- Your environment (OS, Python version, uv version)
+- Error messages or logs
 
-Provided you have [Docker](https://docker.com) installed on your machine, you can leverage [Dev Containers](https://containers.dev) through this [VSCode extension](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containers), to easily set up your development environment, with aforementioned tools already installed and configured, thanks to the `.devcontainer/devcontainer.json` file (located at the root of the project).
+### 2. Feature Requests
 
-To do so, simply:
+Have an idea for improvement?
 
-- Checkout the repo
-- Open it with VSCode
-- Open the [Command Palette](https://code.visualstudio.com/docs/getstarted/userinterface#_command-palette) and select "Dev Containers: Open Folder in Container..."
+**Provide**:
+- Clear description of the feature
+- Use cases and why it's valuable
+- How it fits into blog-tech-kit workflow
+- Any constraints or edge cases
 
-On [GitHub Codespaces](https://github.com/features/codespaces) it's even simpler, as it leverages the `.devcontainer/devcontainer.json` automatically upon opening the codespace.
+### 3. Documentation Improvements
 
-</details>
+Help improve guides, templates, and examples!
 
-## Submitting a pull request
+**Areas needing help**:
+- Clearer examples for each blog type
+- Troubleshooting guide expansion
+- Case studies from real blogs
+- Video tutorials
+- Non-English translations
 
->[!NOTE]
->If your pull request introduces a large change that materially impacts the work of the CLI or the rest of the repository (e.g., you're introducing new templates, arguments, or otherwise major changes), make sure that it was **discussed and agreed upon** by the project maintainers. Pull requests with large changes that did not have a prior conversation and agreement will be closed.
+### 4. Code Contributions
 
-1. Fork and clone the repository
-1. Configure and install the dependencies: `uv sync`
-1. Make sure the CLI works on your machine: `uv run specify --help`
-1. Create a new branch: `git checkout -b my-branch-name`
-1. Make your change, add tests, and make sure everything still works
-1. Test the CLI functionality with a sample project if relevant
-1. Push to your fork and submit a pull request
-1. Wait for your pull request to be reviewed and merged.
+Contribute new features or improvements!
 
-Here are a few things you can do that will increase the likelihood of your pull request being accepted:
+### 5. Template & Command Improvements
 
-- Follow the project's coding conventions.
-- Write tests for new functionality.
-- Update documentation (`README.md`, `spec-driven.md`) if your changes affect user-facing features.
-- Keep your change as focused as possible. If there are multiple changes you would like to make that are not dependent upon each other, consider submitting them as separate pull requests.
-- Write a [good commit message](http://tbaggery.com/2008/04/19/a-note-about-git-commit-messages.html).
-- Test your changes with the Spec-Driven Development workflow to ensure compatibility.
+Enhance the slash commands or templates:
+- Improve content generation logic
+- Add new checklist items
+- Optimize validation gates
+- Expand reference documentation
 
-## Development workflow
+## Development Setup
 
-When working on spec-kit:
+### Prerequisites
 
-1. Test changes with the `specify` CLI commands (`/blogkit.blog`, `/blogkit.plan`, `/blogkit.tasks`) in your coding agent of choice
-2. Verify templates are working correctly in `templates/` directory
-3. Test script functionality in the `scripts/` directory
-4. Ensure memory files (`memory/constitution.md`) are updated if major process changes are made
+```bash
+# Python 3.11+
+python3 --version
 
-### Testing template and command changes locally
+# uv package manager
+curl -LsSf https://astral.sh/uv/install.sh | sh
 
-Running `uv run specify init` pulls released packages, which won’t include your local changes.  
-To test your templates, commands, and other changes locally, follow these steps:
+# Git
+git --version
+```
 
-1. **Create release packages**
+### Getting Started
 
-   Run the following command to generate the local packages:
+```bash
+# 1. Clone the repository
+git clone https://github.com/[org]/blog-tech-kit.git
+cd blog-tech-kit
 
-   ```
-   ./.github/workflows/scripts/create-release-packages.sh v1.0.0
-   ```
+# 2. Create feature branch
+git checkout -b feature/your-feature-name
 
-2. **Copy the relevant package to your test project**
+# 3. Activate Python environment
+python3 -m venv venv
+source venv/bin/activate
 
-   ```
-   cp -r .genreleases/sdd-copilot-package-sh/. <path-to-test-project>/
-   ```
+# 4. Install development dependencies
+uv sync
 
-3. **Open and test the agent**
+# 5. Run tests (if any)
+pytest
 
-   Navigate to your test project folder and open the agent to verify your implementation.
+# 6. Make your changes
 
-## AI contributions in Spec Kit
+# 7. Test locally
+uv tool install -e .
 
-> [!IMPORTANT]
->
-> If you are using **any kind of AI assistance** to contribute to Spec Kit,
-> it must be disclosed in the pull request or issue.
+# 8. Submit pull request
+```
 
-We welcome and encourage the use of AI tools to help improve Spec Kit! Many valuable contributions have been enhanced with AI assistance for code generation, issue detection, and feature definition.
+## Directory Structure
 
-That being said, if you are using any kind of AI assistance (e.g., agents, ChatGPT) while contributing to Spec Kit,
-**this must be disclosed in the pull request or issue**, along with the extent to which AI assistance was used (e.g., documentation comments vs. code generation).
+```
+blog-tech-kit/
+├── src/blog_cli/              # Main CLI package
+│   ├── __init__.py
+│   ├── cli.py                 # Command definitions
+│   ├── config.py              # Configuration management
+│   └── utils.py               # Utilities
+├── .blogkit/                  # Blog-tech-kit specific files
+│   ├── memory/
+│   │   └── constitution.md    # Governance principles
+│   ├── scripts/
+│   │   └── bash/              # Utility scripts
+│   ├── templates/             # Template files
+│   │   ├── spec-template.md
+│   │   ├── plan-template.md
+│   │   ├── tasks-template.md
+│   │   ├── blog-post-template.md
+│   │   └── commands/          # Slash command templates
+│   └── execution-state.md     # Progress tracking
+├── refs/                      # Reference documentation
+├── specs/                     # Feature specifications
+└── tests/                     # Test files
+```
 
-If your PR responses or comments are being generated by an AI, disclose that as well.
+## Making Changes
 
-As an exception, trivial spacing or typo fixes don't need to be disclosed, so long as the changes are limited to small parts of the code or short phrases.
+### 1. Follow Code Style
 
-An example disclosure:
+```python
+# Use type hints
+def create_blog_post(title: str, content: str) -> dict:
+    """Create a new blog post."""
+    pass
 
-> This PR was written primarily by GitHub Copilot.
+# Use docstrings
+class BlogPost:
+    """Represents a blog post with metadata."""
+    pass
+```
 
-Or a more detailed disclosure:
+### 2. Update Documentation
 
-> I consulted ChatGPT to understand the codebase but the solution
-> was fully authored manually by myself.
+- Update README.md if behavior changes
+- Add examples to template comments
+- Document any new principles in constitution.md
+- Update refs/ guides if creating new content
 
-Failure to disclose this is first and foremost rude to the human operators on the other end of the pull request, but it also makes it difficult to
-determine how much scrutiny to apply to the contribution.
+### 3. Test Your Changes
 
-In a perfect world, AI assistance would produce equal or higher quality work than any human. That isn't the world we live in today, and in most cases
-where human supervision or expertise is not in the loop, it's generating code that cannot be reasonably maintained or evolved.
+```bash
+# Test locally
+uv tool install . --force
 
-### What we're looking for
+# Test your command
+blog --help
+blog init test-project
 
-When submitting AI-assisted contributions, please ensure they include:
+# Run any automated tests
+pytest
+```
 
-- **Clear disclosure of AI use** - You are transparent about AI use and degree to which you're using it for the contribution
-- **Human understanding and testing** - You've personally tested the changes and understand what they do
-- **Clear rationale** - You can explain why the change is needed and how it fits within Spec Kit's goals  
-- **Concrete evidence** - Include test cases, scenarios, or examples that demonstrate the improvement
-- **Your own analysis** - Share your thoughts on the end-to-end developer experience
+### 4. Commit With Clear Messages
 
-### What we'll close
+```bash
+# Format: [TYPE] Brief description
+# Types: feature, fix, docs, refactor, test
 
-We reserve the right to close contributions that appear to be:
+git commit -m "feature: Add new blog type for technical tutorials"
+git commit -m "fix: Resolve ContentFirst validation bug"
+git commit -m "docs: Expand CONTRIBUTING guide with examples"
+```
 
-- Untested changes submitted without verification
-- Generic suggestions that don't address specific Spec Kit needs
-- Bulk submissions that show no human review or understanding
+## Creating New Kit Variants
 
-### Guidelines for success
+Blog-tech-kit demonstrates a **namespace strategy** that enables multiple kit variants:
 
-The key is demonstrating that you understand and have validated your proposed changes. If a maintainer can easily tell that a contribution was generated entirely by AI without human input or testing, it likely needs more work before submission.
+### Strategy Overview
 
-Contributors who consistently submit low-effort AI-generated changes may be restricted from further contributions at the maintainers' discretion.
+Each kit variant gets:
+1. **Dedicated CLI command** - `blog`, `specify`, `pm`, `design`, etc.
+2. **Dedicated directory** - `.blogkit/`, `.specify/`, `.pmkit/`, `.designkit/`, etc.
+3. **Dedicated slash commands** - `/blogkit.*`, `/speckit.*`, `/pmkit.*`, etc.
+4. **Dedicated templates** - In `[kit]kit/templates/`
+5. **Dedicated constitution** - In `[kit]kit/memory/constitution.md`
 
-Please be respectful to maintainers and disclose AI assistance.
+### How to Create a New Kit Variant
 
-## Resources
+**Example: Creating PM-Kit for Project Management**
 
-- [Spec-Driven Development Methodology](./spec-driven.md)
-- [How to Contribute to Open Source](https://opensource.guide/how-to-contribute/)
-- [Using Pull Requests](https://help.github.com/articles/about-pull-requests/)
-- [GitHub Help](https://help.github.com)
+#### Step 1: Fork or Create Base
+
+```bash
+# Option A: Fork from spec-kit
+git clone https://github.com/[org]/spec-kit.git pm-kit
+
+# Option B: Fork from blog-tech-kit to reuse namespace strategy
+git clone https://github.com/[org]/blog-tech-kit.git pm-kit
+```
+
+#### Step 2: Update Namespace
+
+```bash
+# Rename .blogkit/ to .pmkit/
+mv .blogkit/ .pmkit/
+
+# Update all references in src/pm_cli/cli.py:
+# - Change "blog" → "pm"
+# - Change ".blogkit/" → ".pmkit/"
+# - Change "/blogkit." → "/pmkit."
+
+# Update pyproject.toml:
+# - Package name: "pm-cli"
+# - Command: "pm"
+# - Description: "Project management kit variant"
+```
+
+#### Step 3: Adapt Templates & Commands
+
+```bash
+# Adapt templates for PM use case:
+# - Remove blog-specific sections
+# - Add project management sections
+# - Create PM-specific checklists
+# - Define PM governance principles
+
+# Update .pmkit/memory/constitution.md with PM principles
+```
+
+#### Step 4: Define PM-Specific Commands
+
+Create new slash commands in `.pmkit/templates/commands/`:
+- `/pmkit.specify` - Project requirements specification
+- `/pmkit.plan` - Project implementation plan
+- `/pmkit.tasks` - Task breakdown with dependencies
+- `[etc]`
+
+#### Step 5: Test Multi-Kit Coexistence
+
+```bash
+# Install both blog-tech-kit and pm-kit
+uv tool install blog-cli --from ./blog-tech-kit
+uv tool install pm-cli --from ./pm-kit
+
+# Verify both CLI commands work
+blog --help
+pm --help
+
+# Create projects with each
+blog init my-blog
+pm init my-project
+
+# Verify namespace isolation
+ls -la my-blog/.blogkit/
+ls -la my-project/.pmkit/
+```
+
+### Namespace Strategy Benefits
+
+✅ **No CLI conflicts** - Each kit has unique command
+✅ **No directory conflicts** - `.blogkit/`, `.pmkit/`, `.designkit/`, etc.
+✅ **No slash command conflicts** - `/blogkit.*`, `/pmkit.*`, `/designkit.*`
+✅ **Easy switching** - `blog init --here --force` or `pm init --here --force`
+✅ **Scalable** - Can add unlimited kit variants
+✅ **Multi-kit teams** - Use multiple kits for different projects
+
+### Kit Variant Checklist
+
+When creating a new kit variant:
+
+- [ ] Rename `.blogkit/` → `.{{ kit }}kit/`
+- [ ] Update CLI command in `src/{{ kit }}_cli/cli.py`
+- [ ] Update package name in `pyproject.toml`
+- [ ] Update all template paths to use new directory
+- [ ] Create {{ kit }}-specific constitution.md
+- [ ] Adapt all templates (spec, plan, tasks)
+- [ ] Create {{ kit }}-specific slash commands
+- [ ] Update README.md with kit-specific examples
+- [ ] Test CLI installation and multi-kit coexistence
+- [ ] Document in CONTRIBUTING.md
+
+## Pull Request Process
+
+1. **Fork the repository** and create a feature branch
+2. **Make your changes** with clear commits
+3. **Update documentation** (README.md, CONTRIBUTING.md)
+4. **Test locally** to ensure everything works
+5. **Submit PR** with:
+   - Clear description of changes
+   - Related issue numbers (if any)
+   - Evidence of testing
+   - Screenshots (if UI-related)
+
+## Review Process
+
+- At least one maintainer review required
+- Check for code quality, style, and completeness
+- Verify documentation is updated
+- Ensure multi-kit coexistence still works
+- Provide feedback and iterate
+
+## Questions?
+
+- **Documentation**: Check README.md, refs/ directory
+- **Examples**: See specs/000-blog-tech-kit-foundation/ folder
+- **Issues**: Open a GitHub issue for discussion
+
+---
+
+**Thank you for contributing to blog-tech-kit!**
+
+Together we're building tools that make it easier to create high-quality, strategic blogs and documentation.
