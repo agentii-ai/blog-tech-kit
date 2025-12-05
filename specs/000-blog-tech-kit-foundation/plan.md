@@ -142,8 +142,8 @@ specs/000-blog-tech-kit-foundation/
 **Structure Decision**: Blog-Tech-Kit is a **CLI tool + template repository**, not a traditional software project. The source structure is optimized for:
 
 1. **CLI package** (`src/blog_cli/`) - Python package published as `blog-cli`
-2. **Templates** (`.specify/templates/`) - Content strategy, editorial workflow, blog post structure
-3. **Scripts** (`.specify/scripts/`) - Bash utilities for feature branching, agent context updates
+2. **Templates** (`.blogkit/templates/`) - Content strategy, editorial workflow, blog post structure
+3. **Scripts** (`.blogkit/scripts/`) - Bash utilities for feature branching, agent context updates
 4. **Reference documentation** (`refs/`) - Examples, best practices, case studies
 5. **Agent integration** (`.claude/commands/`, `.cursor/rules/`, etc.) - Slash command definitions
 
@@ -156,9 +156,9 @@ blog-tech-kit/
 │       ├── config.py        # Configuration and agent detection
 │       └── utils.py         # File operations, git integration
 │
-├── .specify/                # Shared working directory (used by all kits)
+├── .blogkit/                # Blog-Tech-Kit working directory
 │   ├── memory/
-│   │   └── constitution.md  # Blog-Tech-Kit constitution (active)
+│   │   └── constitution.md  # Blog-Tech-Kit constitution
 │   ├── scripts/
 │   │   └── bash/
 │   │       ├── setup-plan.sh          # Feature branching setup
@@ -222,10 +222,11 @@ blog-tech-kit/
 
 **Key Design Decisions**:
 
-1. **Shared `.specify/` Directory**: ALL kit variants use `.specify/` for working files, NOT `.blogkit/` or `.pmkit/`. This enables:
-   - Script portability (paths don't change across kits)
-   - Workflow consistency (all kits follow same structure)
-   - Hybrid workflows (spec-kit for code + blog-kit for content in same project)
+1. **Dedicated `.blogkit/` Directory**: Blog-Tech-Kit uses `.blogkit/` for all blog-specific files. This enables:
+   - Clear separation from spec-kit (which uses `.specify/`)
+   - No conflicts when both kits exist in same project
+   - Easy packaging for release (all files in one directory)
+   - Clear ownership of templates, scripts, and configuration
 
 2. **Namespaced Agent Context**: Each kit manages its own slash commands in `.claude/commands/`, `.cursor/rules/`, etc. Files use kit-specific prefixes (`blogkit.*`, `speckit.*`, `pmkit.*`) to avoid collisions.
 
@@ -235,7 +236,7 @@ blog-tech-kit/
 
 5. **Active Instance vs Template Repository**:
    - `.claude/commands/blogkit.*.md` = active instance (used by current Claude Code session)
-   - `.specify/templates/commands/blogkit.*.md` = template repository (copied during `blog init`)
+   - `.blogkit/templates/commands/blogkit.*.md` = template repository (copied during `blog init`)
 
 ---
 

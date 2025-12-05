@@ -20,10 +20,10 @@
 ## Path Conventions
 
 - **CLI Package**: `src/blog_cli/` (Python package)
-- **Shared Working Directory**: `.specify/` (shared across all kit variants)
-- **Templates**: `.specify/templates/` (blog-specific templates)
-- **Scripts**: `.specify/scripts/bash/` (shared utilities)
-- **Agent Context**: `.claude/commands/`, `.cursor/rules/` (kit-specific files, do not edit .claude/ folder and .specify/ folder)
+- **Shared Working Directory**: `.blogkit/` (blog-tech-kit specific directory)
+- **Templates**: `.blogkit/templates/` (blog-specific templates)
+- **Scripts**: `.blogkit/scripts/bash/` (blog utilities)
+- **Agent Context**: `.claude/commands/`, `.cursor/rules/` (kit-specific files, do not edit .claude/ folder)
 - **Reference Docs**: `refs/` (blog-specific examples and guides)
 
 ---
@@ -37,7 +37,7 @@
 - [x] T001 Verify existing project structure matches plan.md specifications
 - [x] T002 Verify Python 3.11+ environment and `uv` package manager installed
 - [x] T003 [P] Verify Git repository initialized and on feature branch `000-blog-tech-kit-foundation`
-- [x] T004 [P] Verify `.specify/` directory structure exists with memory/, scripts/, templates/ subdirectories
+- [x] T004 [P] Verify `.blogkit/` directory structure exists with memory/, scripts/, templates/ subdirectories
 - [x] T005 [P] Verify existing reference documentation in `refs/` directory (5 core files + 5_more/)
 - [x] T006 Verify pyproject.toml configured with package name `blog-cli` and command `blog`
 
@@ -52,9 +52,9 @@
 **⚠️ CRITICAL**: No user story work can begin until this phase is complete
 
 - [x] T007 Verify constitution.md contains blog-specific principles (8 Core Blog Principles, Blog-Specific Constraints, Quality Gates)
-- [x] T008 Verify namespace strategy documented in constitution.md (CLI separation, slash command namespacing, shared .specify/ directory)
-- [x] T009 [P] Create placeholder blog-specific templates in `.specify/templates/` (spec-template.md, plan-template.md, tasks-template.md - will be adapted in Phase 3)
-- [x] T010 [P] Create placeholder slash command templates in `.specify/templates/commands/` (blogkit.*.md files - will be adapted in Phase 4)
+- [x] T008 Verify namespace strategy documented in constitution.md (CLI separation, slash command namespacing, dedicated .blogkit/ directory)
+- [x] T009 [P] Create placeholder blog-specific templates in `.blogkit/templates/` (spec-template.md, plan-template.md, tasks-template.md - will be adapted in Phase 3)
+- [x] T010 [P] Create placeholder slash command templates in `.blogkit/templates/commands/` (blogkit.*.md files - will be adapted in Phase 4)
 - [x] T011 Verify reference documentation structure complete (`refs/0_overview.md`, `refs/1_principles_for_constitution.md`, `refs/2_define_for_specify.md`, `refs/3_project_mangement_for_plan.md`, `refs/4_pm_tasking_for_tasks.md`, `refs/6_claude_code.md`, `refs/5_more/`)
 
 **Checkpoint**: Foundation ready - user story implementation can now begin
@@ -91,10 +91,10 @@
 
 ### Implementation for User Story 2
 
-- [ ] T021 [P] [US2] Update `blog init` command in `src/blog_cli/cli.py` to copy blog-tech-kit constitution to `.specify/memory/constitution.md`
-- [ ] T022 [P] [US2] Update `blog init` command to copy blog-specific templates from `.specify/templates/` to new project
-- [ ] T023 [P] [US2] Update `blog init` command to copy slash command templates from `.specify/templates/commands/` to `.claude/commands/` (or appropriate agent directory)
-- [ ] T024 [P] [US2] Update `blog init` command to copy bash scripts from `.specify/scripts/bash/` to new project
+- [ ] T021 [P] [US2] Update `blog init` command in `src/blog_cli/cli.py` to copy blog-tech-kit constitution to `.blogkit/memory/constitution.md`
+- [ ] T022 [P] [US2] Update `blog init` command to copy blog-specific templates from `.blogkit/templates/` to new project
+- [ ] T023 [P] [US2] Update `blog init` command to copy slash command templates from `.blogkit/templates/commands/` to `.claude/commands/` (or appropriate agent directory)
+- [ ] T024 [P] [US2] Update `blog init` command to copy bash scripts from `.blogkit/scripts/bash/` to new project
 - [ ] T025 [US2] Update `blog init` command to handle `--here` flag (initialize in current directory)
 - [ ] T026 [US2] Update `blog init` command to handle `--force` flag (skip confirmation when directory has files)
 - [ ] T027 [US2] Update `blog init` command to handle `--ai` flag (claude, cursor, windsurf, etc.)
@@ -114,11 +114,11 @@
 
 ### Implementation for User Story 3
 
-- [ ] T031 [P] [US3] Adapt `spec-template.md` in `.specify/templates/` for blog content strategy (replace software sections with blog sections)
+- [ ] T031 [P] [US3] Adapt `spec-template.md` in `.blogkit/templates/` for blog content strategy (replace software sections with blog sections)
 - [ ] T032 [P] [US3] Update spec-template.md to include: Blog Type Declaration, Target Audience, Content Pillars, Publishing Cadence, Success Criteria, Distribution Requirements
 - [ ] T033 [P] [US3] Remove software-specific sections from spec-template.md: Technical Architecture, API Specs, Database Schemas, Code Structure
 - [ ] T034 [P] [US3] Add validation prompts to spec-template.md: "NO technology choices in spec phase" (enforces Content-First principle)
-- [ ] T035 [US3] Create `/blogkit.specify` slash command in `.specify/templates/commands/blogkit.specify.md`
+- [ ] T035 [US3] Create `/blogkit.specify` slash command in `.blogkit/templates/commands/blogkit.specify.md`
 - [ ] T036 [US3] Update blogkit.specify.md to reference `refs/2_define_for_specify.md` for guidance on blog writing best practices
 - [ ] T037 [US3] Update blogkit.specify.md to enforce Content-First principle (reject CMS, framework, hosting mentions)
 - [ ] T038 [US3] Update blogkit.specify.md to create new feature branch (e.g., `001-authority-blog-ml-engineers`)
@@ -138,13 +138,13 @@
 
 ### Implementation for User Story 4
 
-- [ ] T042 [P] [US4] Adapt `plan-template.md` in `.specify/templates/` for editorial workflow and blog operations (replace code architecture with content workflow)
+- [ ] T042 [P] [US4] Adapt `plan-template.md` in `.blogkit/templates/` for editorial workflow and blog operations (replace code architecture with content workflow)
 - [ ] T043 [P] [US4] Update plan-template.md to include: Editorial Process (4-pass), Tech Stack, Tools & Integrations, AI Discoverability, Distribution Strategy, Analytics & Instrumentation
 - [ ] T044 [P] [US4] Remove software-specific sections from plan-template.md: Code Architecture, Backend Services, Deployment Pipelines, API Design
 - [ ] T045 [P] [US4] Add Constitution Check section to plan-template.md validating blog-specific principles (Content-First, AI-Native Distribution, Simplicity & Focus)
-- [ ] T046 [US4] Create `/blogkit.plan` slash command in `.specify/templates/commands/blogkit.plan.md`
+- [ ] T046 [US4] Create `/blogkit.plan` slash command in `.blogkit/templates/commands/blogkit.plan.md`
 - [ ] T047 [US4] Update blogkit.plan.md to reference `refs/3_project_mangement_for_plan.md` for guidance on blog operations
-- [ ] T048 [US4] Update blogkit.plan.md to run `.specify/scripts/bash/setup-plan.sh` to create plan.md in feature directory
+- [ ] T048 [US4] Update blogkit.plan.md to run `.blogkit/scripts/bash/setup-plan.sh` to create plan.md in feature directory
 - [ ] T049 [US4] Update blogkit.plan.md to enforce Simplicity & Focus principle (no custom CMS before 10 posts, no over-engineering)
 - [ ] T050 [US4] Update blogkit.plan.md to generate `research.md` if NEEDS CLARIFICATION markers exist in Technical Context
 - [ ] T051 [US4] Update blogkit.plan.md to generate `quickstart.md` with getting-started guide for first post
@@ -163,11 +163,11 @@
 
 ### Implementation for User Story 5
 
-- [ ] T054 [P] [US5] Adapt `tasks-template.md` in `.specify/templates/` for content production workflow (replace software tasks with content tasks)
+- [ ] T054 [P] [US5] Adapt `tasks-template.md` in `.blogkit/templates/` for content production workflow (replace software tasks with content tasks)
 - [ ] T055 [P] [US5] Update tasks-template.md to organize tasks by: Sprint Organization (by content pillar/post), Platform Setup, Content Creation, Distribution, Validation Checkpoints
 - [ ] T056 [P] [US5] Remove software-specific sections from tasks-template.md: API Integration Tasks, Database Migration Tasks, Backend Service Tasks
 - [ ] T057 [P] [US5] Add content-specific task groups to tasks-template.md: Research & Outline, Draft, Code Examples (if applicable), Technical Review, Copyedit, SEO Optimization, Publish, Distribution
-- [ ] T058 [US5] Create `/blogkit.tasks` slash command in `.specify/templates/commands/blogkit.tasks.md`
+- [ ] T058 [US5] Create `/blogkit.tasks` slash command in `.blogkit/templates/commands/blogkit.tasks.md`
 - [ ] T059 [US5] Update blogkit.tasks.md to reference `refs/4_pm_tasking_for_tasks.md` and `refs/5_more/tasking_methodology.md` for guidance on task structure
 - [ ] T060 [US5] Update blogkit.tasks.md to organize tasks by content sprint (Sprint 0: Platform Setup, Sprint 1: Foundation Post 1, Sprint 2: Foundation Post 2, etc.)
 - [ ] T061 [US5] Update blogkit.tasks.md to include dependencies (e.g., "Post 1 published" before "Post 2 research begins")
@@ -187,7 +187,7 @@
 
 ### Implementation for User Story 6
 
-- [ ] T065 [US6] Create `/blogkit.implement` slash command in `.specify/templates/commands/blogkit.implement.md`
+- [ ] T065 [US6] Create `/blogkit.implement` slash command in `.blogkit/templates/commands/blogkit.implement.md`
 - [ ] T066 [US6] Update blogkit.implement.md to read `tasks.md` from feature directory
 - [ ] T067 [US6] Update blogkit.implement.md to parse task dependencies and execution order
 - [ ] T068 [US6] Update blogkit.implement.md to execute tasks sequentially respecting dependencies
@@ -209,17 +209,17 @@
 
 ### Implementation for Additional Commands
 
-- [ ] T074 [P] Create `/blogkit.clarify` slash command in `.specify/templates/commands/blogkit.clarify.md` (structured Q&A to resolve underspecified requirements)
+- [ ] T074 [P] Create `/blogkit.clarify` slash command in `.blogkit/templates/commands/blogkit.clarify.md` (structured Q&A to resolve underspecified requirements)
 - [ ] T075 [P] Update blogkit.clarify.md to ask maximum 3 clarification questions prioritized by impact (scope > security > UX)
 - [ ] T076 [P] Update blogkit.clarify.md to document clarifications in spec.md "Clarifications" section
-- [ ] T077 [P] Create `/blogkit.checklist` slash command in `.specify/templates/commands/blogkit.checklist.md` (generate custom quality checklists)
+- [ ] T077 [P] Create `/blogkit.checklist` slash command in `.blogkit/templates/commands/blogkit.checklist.md` (generate custom quality checklists)
 - [ ] T078 [P] Update blogkit.checklist.md to generate checklists based on blog type (e.g., SEO optimization checklist, editorial review checklist)
-- [ ] T079 [P] Create `/blogkit.analyze` slash command in `.specify/templates/commands/blogkit.analyze.md` (cross-artifact consistency analysis)
+- [ ] T079 [P] Create `/blogkit.analyze` slash command in `.blogkit/templates/commands/blogkit.analyze.md` (cross-artifact consistency analysis)
 - [ ] T080 [P] Update blogkit.analyze.md to check consistency between spec.md, plan.md, tasks.md (identify gaps, inconsistencies)
-- [ ] T081 [P] Create `/blogkit.taskstoissues` slash command in `.specify/templates/commands/blogkit.taskstoissues.md` (convert tasks to GitHub issues)
+- [ ] T081 [P] Create `/blogkit.taskstoissues` slash command in `.blogkit/templates/commands/blogkit.taskstoissues.md` (convert tasks to GitHub issues)
 - [ ] T082 [P] Update blogkit.taskstoissues.md to create GitHub issues with dependencies, labels, milestones
-- [ ] T083 [P] Create `/blogkit.constitution` slash command in `.specify/templates/commands/blogkit.constitution.md` (create or update blog governance principles)
-- [ ] T084 [P] Update blogkit.constitution.md to update `.specify/memory/constitution.md` with blog-specific principles
+- [ ] T083 [P] Create `/blogkit.constitution` slash command in `.blogkit/templates/commands/blogkit.constitution.md` (create or update blog governance principles)
+- [ ] T084 [P] Update blogkit.constitution.md to update `.blogkit/memory/constitution.md` with blog-specific principles
 - [ ] T085 Test all additional slash commands: verify each produces expected output without errors
 
 **Checkpoint**: All 9 slash commands functional - complete blog-tech-kit workflow available
@@ -257,16 +257,16 @@
 
 ### Implementation for Template Adaptation
 
-- [ ] T096 [US3] Finalize `spec-template.md` in `.specify/templates/` with complete blog-specific sections
+- [ ] T096 [US3] Finalize `spec-template.md` in `.blogkit/templates/` with complete blog-specific sections
 - [ ] T097 [US3] Add example blog specification to spec-template.md (Authority Blog for AI/LLM Developers)
 - [ ] T098 [US3] Add validation checklist to spec-template.md (10 items from constitution Review & Acceptance Checklist)
-- [ ] T099 [US4] Finalize `plan-template.md` in `.specify/templates/` with complete editorial workflow sections
+- [ ] T099 [US4] Finalize `plan-template.md` in `.blogkit/templates/` with complete editorial workflow sections
 - [ ] T100 [US4] Add example blog plan to plan-template.md (4-pass editorial process, Next.js + MDX, Plausible analytics)
 - [ ] T101 [US4] Add Constitution Check section to plan-template.md validating all 8 Core Blog Principles
-- [ ] T102 [US5] Finalize `tasks-template.md` in `.specify/templates/` with complete sprint organization sections
+- [ ] T102 [US5] Finalize `tasks-template.md` in `.blogkit/templates/` with complete sprint organization sections
 - [ ] T103 [US5] Add example task breakdown to tasks-template.md (Sprint 0: Platform Setup, Sprint 1: Post 1, Sprint 2: Post 2)
 - [ ] T104 [US5] Add validation checkpoint examples to tasks-template.md (analytics review, SEO check, engagement review)
-- [ ] T105 Create `blog-post-template.md` in `.specify/templates/` with blog post structure (NEW template not in spec-kit)
+- [ ] T105 Create `blog-post-template.md` in `.blogkit/templates/` with blog post structure (NEW template not in spec-kit)
 - [ ] T106 Add blog post template sections: Title & Hook, TLDR, Background, Main Content (H2/H3), Code Examples, Results, Lessons Learned, Conclusion & CTA, FAQ
 - [ ] T107 Add AI discoverability guidance to blog-post-template.md (JSON-LD schema, heading hierarchy, internal links)
 
@@ -285,8 +285,8 @@
 - [ ] T108 Test CLI Installation: Install both `specify-cli` and `blog-cli` using `uv tool install`
 - [ ] T109 Verify both commands available: `specify --help` and `blog --help` both work
 - [ ] T110 Test project initialization: Create 3 projects (`specify init test-1`, `blog init test-2`, `pm init test-3` when pm-kit available)
-- [ ] T111 Verify shared directory structure: All projects use `.specify/` (not `.blogkit/` or `.pmkit/`)
-- [ ] T112 Verify constitution coexistence: `.specify/memory/constitution.md` contains correct constitution based on active kit (identified by header comment)
+- [ ] T111 Verify dedicated directory structure: blog-tech-kit uses `.blogkit/` (separate from spec-kit's `.specify/`)
+- [ ] T112 Verify constitution coexistence: `.blogkit/memory/constitution.md` contains correct constitution based on active kit (identified by header comment)
 - [ ] T113 Test slash command isolation: In Claude Code, verify `/speckit.plan` and `/blogkit.plan` both available in autocomplete
 - [ ] T114 Test workflow trigger: Verify `/speckit.plan` triggers software plan, `/blogkit.plan` triggers blog plan (distinct workflows)
 - [ ] T115 Verify agent context files: `.claude/commands/` contains both `speckit.*` and `blogkit.*` files without collision
@@ -306,7 +306,7 @@
 - [ ] T120 [P] Update pyproject.toml metadata (description, keywords, author, repository URL)
 - [ ] T121 [P] Add LICENSE file (MIT license from spec-kit)
 - [ ] T122 [P] Create CONTRIBUTING.md with guidelines for future kit variant creators
-- [ ] T123 [P] Document namespace strategy in README.md (CLI separation, slash command namespacing, shared `.specify/` directory)
+- [ ] T123 [P] Document namespace strategy in README.md (CLI separation, slash command namespacing, dedicated `.blogkit/` directory)
 - [ ] T124 [P] Add troubleshooting section to README.md (common issues, solutions)
 - [ ] T125 [P] Create quickstart guide in README.md (5-step process: install → constitution → specify → plan → tasks → implement)
 - [ ] T126 Validate all slash commands work in Claude Code (test each `/blogkit.*` command)
