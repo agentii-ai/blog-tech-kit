@@ -2,10 +2,8 @@ name: Release Blog-Tech-Kit Templates
 
 on:
   push:
-    branches: [main]
-    paths:
-      - '.blogkit/**'
-      - '.github/workflows/scripts/**'
+    tags:
+      - 'v*'
   workflow_dispatch:
     inputs:
       version:
