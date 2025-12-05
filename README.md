@@ -36,13 +36,40 @@ Extract to your project root. The `.blogkit/` directory and agent-specific comma
 
 ### Option 2: CLI Installation
 
-```bash
-# Install from PyPI (coming soon)
-pip install blog-cli
+#### Persistent Installation (Recommended)
 
-# Or install from source
-uv tool install blog-cli --from /path/to/blog-tech-kit
+Install once and use everywhere:
+
+```bash
+uv tool install blog-cli --from git+https://github.com/agentii-ai/blog-tech-kit.git
 ```
+
+Then use the tool directly:
+
+```bash
+blog init <PROJECT_NAME>
+blog check
+```
+
+To upgrade:
+
+```bash
+uv tool install blog-cli --force --from git+https://github.com/agentii-ai/blog-tech-kit.git
+```
+
+#### One-time Usage
+
+Run directly without installing:
+
+```bash
+uvx --from git+https://github.com/agentii-ai/blog-tech-kit.git blog init <PROJECT_NAME>
+```
+
+**Benefits of persistent installation:**
+- Tool stays installed and available in PATH
+- No need to create shell aliases
+- Better tool management with `uv tool list`, `uv tool upgrade`, `uv tool uninstall`
+- Cleaner shell configuration
 
 ### Create Your First Blog Project
 
