@@ -91,16 +91,16 @@
 
 ### Implementation for User Story 2
 
-- [ ] T021 [P] [US2] Update `blog init` command in `src/blog_cli/cli.py` to copy blog-tech-kit constitution to `.blogkit/memory/constitution.md`
-- [ ] T022 [P] [US2] Update `blog init` command to copy blog-specific templates from `.blogkit/templates/` to new project
-- [ ] T023 [P] [US2] Update `blog init` command to copy slash command templates from `.blogkit/templates/commands/` to `.claude/commands/` (or appropriate agent directory)
-- [ ] T024 [P] [US2] Update `blog init` command to copy bash scripts from `.blogkit/scripts/bash/` to new project
-- [ ] T025 [US2] Update `blog init` command to handle `--here` flag (initialize in current directory)
-- [ ] T026 [US2] Update `blog init` command to handle `--force` flag (skip confirmation when directory has files)
-- [ ] T027 [US2] Update `blog init` command to handle `--ai` flag (claude, cursor, windsurf, etc.)
-- [ ] T028 [US2] Update `blog init` command to initialize Git repository (unless `--no-git` flag provided)
-- [ ] T029 [US2] Test `blog init my-test-blog` creates complete project structure with blog-specific files
-- [ ] T030 [US2] Test `blog init --here --force` in existing directory overlays blog-tech-kit files
+- [x] T021 [P] [US2] Update `blog init` command in `src/blog_cli/cli.py` to copy blog-tech-kit constitution to `.blogkit/memory/constitution.md`
+- [x] T022 [P] [US2] Update `blog init` command to copy blog-specific templates from `.blogkit/templates/` to new project
+- [x] T023 [P] [US2] Update `blog init` command to copy slash command templates from `.blogkit/templates/commands/` to `.claude/commands/` (or appropriate agent directory)
+- [x] T024 [P] [US2] Update `blog init` command to copy bash scripts from `.blogkit/scripts/bash/` to new project
+- [x] T025 [US2] Update `blog init` command to handle `--here` flag (initialize in current directory)
+- [x] T026 [US2] Update `blog init` command to handle `--force` flag (skip confirmation when directory has files)
+- [x] T027 [US2] Update `blog init` command to handle `--ai` flag (claude, cursor, windsurf, etc.)
+- [x] T028 [US2] Update `blog init` command to initialize Git repository (unless `--no-git` flag provided)
+- [x] T029 [US2] Test `blog init my-test-blog` creates complete project structure with blog-specific files
+- [x] T030 [US2] Test `blog init --here --force` in existing directory overlays blog-tech-kit files
 
 **Checkpoint**: `blog init` command functional - users can create new blog projects with complete blog-tech-kit infrastructure
 
