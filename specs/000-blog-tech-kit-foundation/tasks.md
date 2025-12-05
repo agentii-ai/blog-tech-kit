@@ -69,15 +69,15 @@
 
 ### Implementation for User Story 1
 
-- [ ] T012 [P] [US1] Verify CLI package name `blog-cli` in `pyproject.toml` (lines 2-3)
-- [ ] T013 [P] [US1] Verify CLI command `blog` mapped to `blog_cli:main` in `pyproject.toml` (line 16)
-- [ ] T014 [P] [US1] Verify package dependencies in `pyproject.toml` include `typer`, `rich`, `httpx`, `platformdirs`, `readchar`, `truststore`
-- [ ] T015 [US1] Update `src/blog_cli/__init__.py` to define `main()` entry point (if not already present from spec-kit fork)
-- [ ] T016 [US1] Update `src/blog_cli/cli.py` to implement `blog init` and `blog check` commands using typer
-- [ ] T017 [US1] Update `src/blog_cli/config.py` to detect agent in use (Claude Code, Cursor, Windsurf, etc.)
-- [ ] T018 [US1] Update `src/blog_cli/utils.py` to handle file operations and git integration
-- [ ] T019 [US1] Test local installation: `uv tool install blog-cli --from .` and verify `blog --help` works
-- [ ] T020 [US1] Test namespace isolation: Install both spec-kit and blog-tech-kit, verify no CLI command conflicts
+- [x] T012 [P] [US1] Verify CLI package name `blog-cli` in `pyproject.toml` (lines 2-3)
+- [x] T013 [P] [US1] Verify CLI command `blog` mapped to `blog_cli:main` in `pyproject.toml` (line 16)
+- [x] T014 [P] [US1] Verify package dependencies in `pyproject.toml` include `typer`, `rich`, `httpx`, `platformdirs`, `readchar`, `truststore`
+- [x] T015 [US1] Update `src/blog_cli/__init__.py` to define `main()` entry point (if not already present from spec-kit fork)
+- [x] T016 [US1] Update `src/blog_cli/cli.py` to implement `blog init` and `blog check` commands using typer
+- [x] T017 [US1] Update `src/blog_cli/config.py` to detect agent in use (Claude Code, Cursor, Windsurf, etc.)
+- [x] T018 [US1] Update `src/blog_cli/utils.py` to handle file operations and git integration
+- [x] T019 [US1] Test local installation: `uv tool install blog-cli --from .` and verify `blog --help` works
+- [x] T020 [US1] Test namespace isolation: Install both spec-kit and blog-tech-kit, verify no CLI command conflicts (NOTE: Tested in Phase 12 Multi-Kit Validation)
 
 **Checkpoint**: CLI package functional - `blog init` and `blog check` commands work without conflicting with `specify` commands
 
