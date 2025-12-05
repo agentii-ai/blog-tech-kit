@@ -1,7 +1,7 @@
 # Blog-Tech-Kit Constitution
 <!-- AI/LLM SaaS Technical Blog & Twitter Marketing Governance Framework -->
 
-**Version**: 1.0.0 | **Ratified**: 2025-12-04 | **Last Amended**: 2025-12-04
+**Version**: 1.1.0 | **Ratified**: 2025-12-04 | **Last Amended**: 2025-12-05
 
 ---
 
@@ -140,6 +140,39 @@ When a project has multiple kit variants installed, the **active kit** is determ
 7. **Thought Leadership = Transparency + Specificity**: Show your work with extreme specificity
 8. **Link Equity & Topic Authority**: Build content clusters, not isolated posts
 
+### II-A. Evidence Standards (NON-NEGOTIABLE)
+
+**Principle**: All claims, benchmarks, and technical assertions must be supported by evidence from an explicit tier hierarchy.
+
+**Evidence Tier Hierarchy**:
+
+| Tier | Description | Examples | Usage |
+|------|-------------|----------|-------|
+| **Tier 1** | Peer-reviewed research, independently verified benchmarks | Academic papers, third-party audits, industry standards | Required for accuracy claims, performance benchmarks |
+| **Tier 2** | Industry-recognized methodologies | Established frameworks, widely-adopted patterns, expert consensus | Acceptable for best practices, architectural patterns |
+| **Tier 3** | Internal research with full methodology disclosure | Custom benchmarks, A/B tests, production metrics (with methodology) | Acceptable when methodology is transparent and reproducible |
+| **Tier 4** | Anecdotal, unverified claims | "We heard that..." "Many companies..." | **AVOID** - Never use without Tier 1-3 support |
+
+**Application**:
+- Every specification must identify evidence sources for key claims
+- Plans must include evidence validation tasks in the editorial workflow
+- Technical review pass must verify evidence tier compliance
+
+**Test**: No post may be published with Tier 4 evidence as primary support. All accuracy/performance claims require Tier 1-2 evidence.
+
+### II-B. Honest Limitations Requirement
+
+**Principle**: Every post must include explicit acknowledgment of limitations, edge cases, and when the approach does NOT apply.
+
+**Application**:
+- Authority posts: Dedicated "Limitations" or "When This Doesn't Apply" section (minimum 150 words)
+- Practitioner posts: "Edge Cases" or "Common Pitfalls" section
+- All posts: Failure modes, cost trade-offs, and complexity acknowledgments where relevant
+
+**Rationale**: Transparency builds trust. The most authoritative AI/LLM blogs (Anthropic, OpenAI) consistently document what doesn't work alongside what does.
+
+**Test**: Posts without limitation acknowledgment fail the technical review pass and must be revised before publication
+
 **Application**:
 - Every specification must identify which **blog type** is being built: **Authority**, **Practitioner**, **Community**, or **Thought Leadership**
 - Plans must define content calendar strategy based on chosen blog type
@@ -172,24 +205,64 @@ When a project has multiple kit variants installed, the **active kit** is determ
 
 **Test**: Every specification includes a "Success Criteria" section with at least 3 measurable outcomes. Every plan includes a "Quality Gates" section defining editorial workflow checkpoints.
 
-### IV. AI-Native Content Distribution
+### IV. SEO-First Content Architecture (NON-NEGOTIABLE)
+
+**Principle**: SEO is integrated into every stage of content creation—from specification through measurement—not added as an afterthought.
+
+**Rationale**: In 2024-2025, organic search and AI systems are primary discovery channels. Content optimized for search intent, topical authority, and E-E-A-T signals achieves sustainable traffic and authority.
+
+**SEO Integration by Workflow Stage**:
+
+| Stage | SEO Requirements |
+|-------|------------------|
+| **Specification** | Target keyword identified, search intent validated, content pillar assigned |
+| **Clarification** | Keyword competition analyzed, content gap identified, internal linking targets defined |
+| **Planning** | URL structure defined, metadata templates created, structured data schema selected |
+| **Tasks** | Keyword density targets, heading hierarchy requirements, image alt-text tasks |
+| **Implementation** | On-page SEO checklist, technical SEO validation, Core Web Vitals targets |
+| **Measurement** | Ranking tracking, organic traffic monitoring, search console analysis |
+
+**Core SEO Requirements**:
+1. **Search Intent Fit**: Each post precisely answers a specific query and sub-questions
+2. **Topical Authority**: Content organized into clusters (pillar + supporting posts)
+3. **E-E-A-T Signals**: Author attribution, real examples, transparent methodology
+4. **Technical Quality**: Fast, mobile-friendly, structured data, clean HTML
+
+**Test**: Specifications must include a "Target Keyword" field. Plans must include an "SEO Checklist" section.
+
+### IV-A. AI-Native Content Distribution
 
 **Principle**: Content must be optimized for discovery by both human readers and AI systems (ChatGPT, Perplexity, Google AI Overviews, Claude).
 
-**Rationale**: In 2024-2025, AI systems are primary discovery and citation channels. Content that AI can extract, understand, and cite achieves wider reach and sustained authority.
+**Rationale**: AI systems are increasingly primary discovery and citation channels. Content that AI can extract, understand, and cite achieves wider reach and sustained authority.
 
 **Application**:
-- All blog posts include structured metadata (JSON-LD schema)
+- All blog posts include structured metadata (JSON-LD Article schema)
 - Content uses clear heading hierarchy (H1 → H2 → H3) for extraction
 - Code examples include language tags and complete context
 - Key concepts are explicitly defined and linked to glossary/pattern library
-- Summary sections enable AI systems to extract concise answers
+- Summary/Key Takeaways sections enable AI systems to extract concise answers
+- FAQ sections target "People Also Ask" queries
+
+**Structured Data Requirements**:
+```json
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "[Post Title]",
+  "author": { "@type": "Person", "name": "[Author Name]", "jobTitle": "[Role]" },
+  "datePublished": "[ISO Date]",
+  "dateModified": "[ISO Date]",
+  "description": "[Meta Description]",
+  "image": "[OG Image URL]"
+}
+```
 
 **Examples**:
 - ✅ "Problem: Agent responses lack context → Solution: Prompt templates with variable injection → Code example → Results"
 - ❌ "Check out our new feature that makes agents better!"
 
-**Test**: Plans must include an "AI Discoverability" section describing how content will be structured for LLM extraction and citation.
+**Test**: Plans must include an "AI Discoverability" section describing JSON-LD schema, heading hierarchy, and FAQ sections.
 
 ### V. Incremental Content Delivery
 
@@ -226,6 +299,24 @@ When a project has multiple kit variants installed, the **active kit** is determ
 - **Practitioner Blogs**: Developer CAC, tutorial completion rates, SDK adoption (1-3 month horizon)
 - **Community Blogs**: Contributor count, community engagement (comments, shares)
 - **Thought Leadership**: Speaking invitations, media mentions, advisor roles
+
+**Measurement Dashboard Template**:
+
+| Metric | M1 Target | M3 Target | M6 Target | M12 Target | Tool |
+|--------|-----------|-----------|-----------|------------|------|
+| Organic Traffic | [X]K | [X]K | [X]K | [X]K+ | Plausible/GA4 |
+| Newsletter Subscribers | [X] | [X] | [X] | [X]+ | ConvertKit |
+| Page-1 Keywords | [X] | [X] | [X] | [X]+ | GSC/Ahrefs |
+| Backlinks | [X] | [X] | [X] | [X]+ | Ahrefs |
+| Avg Time on Page | [X]:00 | [X]:30 | [X]:00 | [X]:30+ | Plausible |
+| Blog-Sourced Leads | [X] | [X] | [X] | [X]+ | CRM |
+| AI Citations | [X] | [X] | [X] | [X]+ | Manual |
+
+**Measurement Cadence**:
+- **Daily**: Traffic, social engagement (first 7 days post-publish)
+- **Weekly**: Keyword rankings, newsletter growth
+- **Monthly**: Full dashboard review, content performance analysis
+- **Quarterly**: Backlink audit, AI citation check, strategy adjustment
 
 **Test**: Plans include an "Analytics & Instrumentation" section defining tools, metrics, and reporting cadence.
 
@@ -278,60 +369,149 @@ Every blog initiative must define:
 
 1. **Blog Type**: Authority, Practitioner, Community, or Thought Leadership
 2. **Target Audience**: Specific developer persona (e.g., "Senior ML Engineers building production LLM systems")
+   - Consider multiple audience tracks with customized content depth and terminology
 3. **Content Pillars**: 3-5 core themes aligned with product value (e.g., "Context Engineering," "Production Debugging," "Multi-Agent Orchestration")
-4. **Publishing Cadence**: Realistic frequency based on blog type and team capacity
+   - Each pillar should have a hub/pillar page (3,000-6,000+ words) and 8-12 cluster posts
+4. **Publishing Cadence**: Realistic frequency based on blog type and **team capacity**
    - Authority: 1-2 posts/quarter (deep research, original insights)
    - Practitioner: 2-4 posts/month (tutorials, guides, patterns)
    - Community: 4-8 posts/month (contributor features, case studies)
    - Thought Leadership: 1-2 posts/month (executive perspective, industry analysis)
 5. **Success Metrics**: Measurable outcomes aligned with blog type (see Principle VI)
+6. **Primary Keywords**: Target keyword per pillar (map 1 primary + 2-5 secondary keywords per post)
+
+### Team Resource Requirements
+
+**Principle**: Publishing cadence must be validated against available team capacity. Unrealistic cadence degrades quality.
+
+**Team Capacity Guidelines**:
+
+| Cadence | Minimum Team | Roles Required |
+|---------|--------------|----------------|
+| 1-2 posts/month | 0.5 FTE | Writer (part-time), SME review (ad hoc) |
+| 3-4 posts/month | 1.5 FTE | Writer (1 FTE), Editor (0.25 FTE), SME (0.25 FTE) |
+| 6-8 posts/month | 3 FTE | Writer (1.5 FTE), Editor (0.5 FTE), SME (0.5 FTE), Marketing (0.5 FTE) |
+| 10+ posts/month | 5+ FTE | Multiple writers, dedicated editor, SME pool, marketing team |
+
+**Role Definitions**:
+- **Writer**: Research, drafting, revisions (15-25 hours per authority post, 8-12 hours per practitioner post)
+- **SME (Subject Matter Expert)**: Technical review, accuracy validation (2-4 hours per post)
+- **Editor**: Copyediting, SEO optimization, quality gates (3-5 hours per post)
+- **Marketing**: Distribution, social amplification, analytics (2-4 hours per post)
+
+**Test**: Specifications must include a "Team Capacity" section validating that stated cadence is achievable with available resources. Plans must assign owners to each editorial role.
 
 ### Editorial Workflow Standards
 
-All blog content follows a **4-pass editorial process**:
+All blog content follows a **4-pass editorial process** with SEO integrated at each stage:
 
-1. **Research Pass** (Week 1): Topic research, outline creation, source validation, keyword research
+1. **Research Pass** (Week 1): Topic research, outline creation, source validation, **keyword research & competition analysis**
+   - SEO: Primary keyword selected, search intent validated, competitor content analyzed
+   - Deliverable: Outline with H2/H3 structure, keyword mapping, evidence sources
+
 2. **Draft Pass** (Week 2): Full draft with code examples, diagrams, citations, and internal links
-3. **Technical Review Pass** (Week 3): Domain expert validates accuracy, tests code examples, verifies claims
-4. **Final Edit Pass** (Week 4): Copyediting, SEO optimization, metadata completion, image optimization
+   - SEO: Keyword placement (H1, first 100 words, H2s), internal linking (3-5 links), meta description draft
+   - Deliverable: Complete draft meeting word count targets, all sections filled
+
+3. **Technical Review Pass** (Week 3): Domain expert validates accuracy, tests code examples, verifies claims, **checks evidence tier compliance**
+   - SEO: Verify structured data, check heading hierarchy, validate code examples
+   - Deliverable: SME sign-off with corrections noted, evidence sources validated
+
+4. **Final Edit Pass** (Week 4): Copyediting, **SEO optimization**, metadata completion, image optimization
+   - SEO: Final keyword density check, meta description (150-160 chars), OG tags, alt text, JSON-LD schema
+   - Deliverable: Publication-ready post with 15-point SEO checklist complete
 
 **Timeline**:
-- Authority/Practitioner posts: 4 weeks from research to publication
+- Authority posts: 4-6 weeks from research to publication
+- Practitioner posts: 2-3 weeks (simpler validation)
 - Community/Thought Leadership posts: 2 weeks (less technical validation needed)
 
 **Quality Gates**:
-- Draft must include at least 3 internal links to related content
+- Draft must include at least 3-5 internal links to related content (content cluster strategy)
 - Code examples must be tested in a clean environment
-- SEO metadata must target a primary keyword with < 5,000 monthly search volume (low competition)
-- Technical review must be completed by someone other than the author
+- SEO metadata must target a primary keyword with < 5,000 monthly search volume (low competition initially)
+- Technical review must be completed by someone other than the author (NO SELF-VALIDATION)
+- Evidence tier compliance verified (no Tier 4 claims as primary support)
+- Limitations section present (minimum 150 words for authority posts)
 
-### Distribution Requirements
+### Distribution Requirements (3-Tier Model)
 
-Every published post must include:
+Every published post must include a distribution plan across three tiers:
 
-- **SEO Optimization**: Target keyword, meta description (150-160 chars), Open Graph tags, Twitter Card metadata
-- **Internal Linking**: Minimum 2-3 links to related content (builds topic authority and SEO equity)
-- **Promotion Plan**:
-  - Social media posts (Twitter/X thread, LinkedIn post)
-  - Newsletter feature (excerpt + CTA)
-  - Community sharing (Reddit, Hacker News if applicable, Dev.to cross-post)
-- **Citation Preparation**: Permanent URL, clear licensing (Creative Commons or All Rights Reserved), author attribution, canonical URL tags
+#### Tier 1: Owned Audience (Day 0)
+- **Blog Publication**: SEO-optimized post with target keyword, meta description (150-160 chars), JSON-LD schema
+- **Newsletter**: Dedicated email or featured section (excerpt + compelling CTA)
+- **RSS Feed**: Automatic syndication to feed subscribers
+- **Internal Linking**: Minimum 3-5 links to related content (builds topic authority and SEO equity)
 
-**Hacker News Strategy** (for Authority/Practitioner posts):
-- Post as "Show HN" on Tue/Wed/Thu between 7-9 AM EST
-- Title format: "Show HN: [Problem] – [Approach/Result]"
-- Engage with comments within first 2 hours
-- Target: 3,000-5,000 targeted visitors per successful HN post
+#### Tier 2: Amplification (Day 0-3)
+- **Social Media**:
+  - Twitter/X: Thread (1 main + 5-7 follow-ups) with key insights, posted 2pm PT
+  - LinkedIn: Long-form post with narrative angle, posted 9am PT
+- **Cross-Posting**: Dev.to, Hashnode, Medium (with canonical URL pointing to original)
+- **Open Graph & Twitter Cards**: Custom image (1200x630px) with title overlay
+
+#### Tier 3: Community Engagement (Day 1-7)
+- **Hacker News**: Submit as "Show HN" on Tue/Wed/Thu between 7-9 AM EST
+  - Title format: "Show HN: [Problem] – [Approach/Result]"
+  - Engage with comments within first 2 hours
+  - Target: 3,000-5,000 targeted visitors per successful post
+- **Reddit**: Relevant subreddits (r/programming, r/MachineLearning, domain-specific)
+  - Participate authentically, don't spam
+- **Discord/Slack Communities**: Share in relevant channels with context
+
+#### Content Repurposing Requirements
+Each authority post should generate:
+- 1 Twitter/X thread (5-7 tweets)
+- 1 LinkedIn post (different angle)
+- 3-5 quote graphics for social sharing
+- 1 newsletter segment
+- 1 cross-post (Dev.to or equivalent)
+
+**Citation Preparation**: Permanent URL, clear licensing, author attribution, canonical URL tags
 
 ### Technical Standards
 
 Blog implementations must meet:
 
 - **Performance**: Lighthouse score ≥90 (mobile and desktop), Core Web Vitals pass
+  - LCP (Largest Contentful Paint): < 2.5s
+  - CLS (Cumulative Layout Shift): < 0.1
+  - FID (First Input Delay): < 100ms
 - **Accessibility**: WCAG 2.1 AA compliance minimum (semantic HTML, alt text, keyboard navigation)
-- **SEO**: Valid structured data (JSON-LD Article schema), sitemap.xml, robots.txt, OpenGraph + Twitter Card tags
+- **SEO Technical Requirements**:
+  - Valid JSON-LD Article schema on all posts (headline, author, datePublished, image)
+  - Organization schema on main site
+  - sitemap.xml with all blog posts
+  - robots.txt with sitemap reference
+  - OpenGraph tags (og:title, og:description, og:image, og:url)
+  - Twitter Card tags (twitter:card, twitter:title, twitter:description, twitter:image)
+  - Canonical URLs on all pages
+  - Clean URL structure (no dates unless news content)
 - **Analytics**: Privacy-compliant tracking (GDPR/CCPA), cookie consent if required
 - **Security**: HTTPS enforced, CSP headers, dependency scanning, XSS protection
+
+### SEO Checklist (15-Point Gate)
+
+Every post must pass this checklist before publication:
+
+| # | Item | Requirement |
+|---|------|-------------|
+| 1 | Primary Keyword | In H1, first 100 words, 1-2 H2s |
+| 2 | Meta Title | ≤60 chars, includes keyword + brand |
+| 3 | Meta Description | 150-160 chars, keyword + value + CTA |
+| 4 | URL Slug | Short, hyphenated, keyword-relevant |
+| 5 | Heading Hierarchy | H1 → H2 → H3 (no skipped levels) |
+| 6 | Internal Links | 3-5 links to related content |
+| 7 | External Links | 2-3 authoritative sources |
+| 8 | Images | Optimized (<200KB), descriptive alt text |
+| 9 | JSON-LD Schema | Valid Article schema |
+| 10 | OG Tags | Title, description, image (1200x630px) |
+| 11 | Twitter Card | Summary large image card |
+| 12 | Readability | Grade 11-14 (Flesch-Kincaid) |
+| 13 | FAQ Section | 4-6 Q&A pairs (authority posts) |
+| 14 | Key Takeaways | 3-5 extractable bullet points |
+| 15 | Code Examples | Language-tagged, tested, complete |
 
 ---
 
@@ -535,5 +715,24 @@ Before releasing a new kit variant, validate multi-kit coexistence:
 
 **Living Document**: This constitution evolves as blog-tech-kit matures and as multi-kit coexistence patterns are validated. Amendments follow semantic versioning and propagate to all dependent templates and scripts.
 
-**Last Reviewed**: 2025-12-04
-**Next Review**: 2025-03-04 (Quarterly)
+**Last Reviewed**: 2025-12-05
+**Next Review**: 2025-03-05 (Quarterly)
+
+---
+
+## Changelog
+
+### v1.1.0 (2025-12-05)
+- **Added**: Evidence Tier Hierarchy (II-A) - 4-tier evidence standards for claims validation
+- **Added**: Honest Limitations Requirement (II-B) - Mandatory limitations sections
+- **Added**: SEO-First Content Architecture (IV) - SEO integration at every workflow stage
+- **Added**: SEO Integration by Workflow Stage table
+- **Added**: JSON-LD structured data template
+- **Added**: Team Resource Requirements section with FTE guidelines
+- **Added**: Distribution Requirements (3-Tier Model) with content repurposing
+- **Added**: Measurement Dashboard Template with targets and cadence
+- **Added**: 15-Point SEO Checklist gate for publication
+- **Added**: Core Web Vitals targets (LCP, CLS, FID)
+- **Enhanced**: Editorial Workflow Standards with SEO at each pass
+- **Enhanced**: Technical Standards with detailed SEO requirements
+- **Enhanced**: Quality Gates with evidence tier and limitations checks

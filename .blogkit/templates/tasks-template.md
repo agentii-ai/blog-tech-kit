@@ -71,68 +71,76 @@ description: "Task list template for blog content production sprints"
 **Timeline**: [e.g., "Weeks 1-3 from sprint start"]
 **Cadence**: [e.g., "2-week sprint for practitioner posts, 6-week for authority posts"]
 **Target Audience**: [Primary reader persona from spec]
+**Target Keyword**: [Primary keyword from spec.md]
+**Evidence Tier**: [Tier 1/2/3 per constitution]
 
-### Phase 1: Research & Outline
+### Phase 1: Research & Outline (Days 1-5)
 
 - [ ] T019 Competitive analysis: Research 5-10 existing posts on similar topics (note gaps, unique angles)
 - [ ] T020 Keyword research: Identify target keyword and 5-10 related keywords (< 5K monthly search volume)
 - [ ] T021 Create detailed outline with H2/H3 structure (10-15 sections for authority post, 5-8 for practitioner)
-- [ ] T022 [P] Gather evidence: Collect data, screenshots, benchmarks, case studies for main points
+- [ ] T022 [P] Gather evidence (Tier 1-3): Collect data, benchmarks, case studies for main claims
 - [ ] T023 [P] Identify code examples needed (list 3-5 concrete examples with expected output)
 - [ ] T024 SME kickoff meeting: Brief technical reviewer on post angle and confirm accuracy approach
 
-### Phase 2: Draft
+### Phase 2: Draft (Days 6-15)
 
 - [ ] T025 Write main content (1,500-3,000 words for authority, 800-1,200 for practitioner)
 - [ ] T026 Add code examples with comments and expected output (3-5 complete, runnable examples)
 - [ ] T027 [P] Create diagrams/visuals if applicable (architecture, workflow, comparison charts)
-- [ ] T028 Add internal links to 2-3 related posts (content cluster strategy)
-- [ ] T029 Add external links to 1-2 authoritative sources (credibility signals)
-- [ ] T030 Create FAQ section (3-5 FAQs from common reader questions)
-- [ ] T031 Write TLDR summary (2-3 sentence takeaway)
+- [ ] T028 [SEO] Add internal links to 3-5 related posts (content cluster strategy, link to hub page)
+- [ ] T029 [SEO] Add external links to 2-3 authoritative sources (credibility signals, Tier 1-2 sources)
+- [ ] T030 Create FAQ section (4-6 FAQs from common reader questions, helps AI summarization)
+- [ ] T031 Write TLDR and Key Takeaways section (3-5 extractable bullets for AI systems)
+- [ ] T032 Write Limitations section (150+ words for authority posts, honest about edge cases)
 
-### Phase 3: Technical Review (No Self-Validation)
+### Phase 3: Technical Review `[NO SELF-VALIDATION]` (Days 16-19)
 
-- [ ] T032 Code example testing: Run all code examples in clean environment, verify output
-- [ ] T033 SME technical review by non-author (designated technical reviewer)
-- [ ] T034 Accuracy check: Verify facts, benchmarks, citations are current and correct
-- [ ] T035 Feasibility check: Confirm all instructions/tutorials work end-to-end
-- [ ] T036 Security review: Check for security implications or warnings needed
+- [ ] T033 [NO SELF-VALIDATION] Code example testing: Run all code in clean environment, verify output
+- [ ] T034 [NO SELF-VALIDATION] SME technical review by non-author (designated technical reviewer)
+- [ ] T035 [NO SELF-VALIDATION] Evidence tier validation: Verify all claims have Tier 1-3 support
+- [ ] T036 [NO SELF-VALIDATION] Accuracy check: Verify facts, benchmarks, citations are current
+- [ ] T037 Feasibility check: Confirm all instructions/tutorials work end-to-end
+- [ ] T038 Security review: Check for security implications or warnings needed
 
-### Phase 4: Copyedit & SEO Optimization
+### Phase 4: Copyedit & SEO Optimization (Days 20-23)
 
-- [ ] T037 Structural edit: Confirm outline matches content, information flows logically
-- [ ] T038 Clarity edit: Ensure concepts explained before use, jargon appropriate for audience
-- [ ] T039 Grammar/spelling: Proofread for errors, consistency with editorial guide
-- [ ] T040 SEO optimization: Add target keyword to title, H2, first 100 words, meta description
-- [ ] T041 H2/H3 optimization: Ensure clear heading hierarchy for LLM parsing
-- [ ] T042 Meta description: Write 150-160 character description with target keyword
-- [ ] T043 Add Open Graph and Twitter Card tags
-- [ ] T044 Internal link anchor text: Optimize for keyword relevance and user context
-- [ ] T045 Final proofread and formatting check
+- [ ] T039 Structural edit: Confirm outline matches content, information flows logically
+- [ ] T040 Clarity edit: Ensure concepts explained before use, jargon appropriate for audience
+- [ ] T041 Grammar/spelling: Proofread for errors, consistency with editorial guide
+- [ ] T042 [SEO] Keyword optimization: Target keyword in title, H2, first 100 words, URL slug
+- [ ] T043 [SEO] H1→H2→H3 hierarchy: Ensure clear heading structure for LLM parsing
+- [ ] T044 [SEO] Meta description: Write 150-160 characters with target keyword and CTA
+- [ ] T045 [SEO] Open Graph and Twitter Card tags: Verify preview renders correctly
+- [ ] T046 [SEO] Internal link anchor text: Optimize for keyword relevance
+- [ ] T047 [SEO] 40-point SEO checklist gate: Verify all items before publish
+- [ ] T048 Final proofread and formatting check
 
-### Phase 5: Publish & Distribute
+### Phase 5: Publish & Distribute (Days 24-28)
 
-- [ ] T046 Create canonical URL and verify no duplicate content issues
-- [ ] T047 Schedule post publish date and time (optimal: Tuesday-Thursday, 7-9 AM EST)
-- [ ] T048 Publish post and verify it appears on blog homepage
-- [ ] T049 Verify JSON-LD schema renders correctly (test with schema.org validator)
-- [ ] T050 Verify analytics tracking fires on page load (test with browser console)
-- [ ] T051 Send post to newsletter subscribers (Day 0)
-- [ ] T052 Create Twitter thread (3-5 tweets with key takeaways) and post (Day 0)
-- [ ] T053 Create LinkedIn post with excerpt and link (Day 0)
-- [ ] T054 Cross-post to Dev.to with canonical link (Day 1-2)
-- [ ] T055 Share in relevant Discord/Slack communities (Day 1-2, follow community rules)
-- [ ] T056 Monitor and respond to all comments on blog and social (Day 0-7)
+- [ ] T049 [SEO] Create canonical URL and verify no duplicate content issues
+- [ ] T050 Schedule post publish date and time (optimal: Tuesday-Thursday, 7-9 AM EST)
+- [ ] T051 Publish post and verify it appears on blog homepage
+- [ ] T052 [SEO] Verify JSON-LD schema renders correctly (test with schema.org validator)
+- [ ] T053 Verify analytics tracking fires on page load (test with browser console)
+- [ ] T054 Send post to newsletter subscribers (Day 0, Hour 1)
+- [ ] T055 Create Twitter thread (1 main + 5-7 follow-ups with key takeaways, Day 0)
+- [ ] T056 Create LinkedIn post with excerpt and link (Day 0)
+- [ ] T057 Cross-post to Dev.to with canonical link (Day 1-2)
+- [ ] T058 Share in relevant Discord/Slack communities (Day 1-2, follow community rules)
+- [ ] T059 Submit to Hacker News if appropriate (Tue-Thu, 7-9 AM EST)
+- [ ] T060 Monitor and respond to all comments within 24 hours (Day 0-7)
 
-### Phase 6: Measurement & Iteration
+### Phase 6: Measurement & Iteration (Ongoing)
 
-- [ ] T057 After 1 week: Review initial analytics (pageviews, time on page, scroll depth, referrers)
-- [ ] T058 After 1 week: Check keyword rankings for target keyword and related keywords
-- [ ] T059 After 3 days: Analyze social engagement (retweets, likes, comments, shares)
-- [ ] T060 After 1 month: Identify backlinks and external citations
-- [ ] T061 Document performance in `analytics-log.md` (traffic, engagement, conversions)
-- [ ] T062 Identify content improvements for future posts (what worked, what didn't)
+- [ ] T061 Day 1: Initial traffic and engagement baseline check
+- [ ] T062 Week 1: Review analytics (pageviews, time on page, scroll depth, referrers)
+- [ ] T063 Week 1: [SEO] Check keyword rankings in GSC for target + related keywords
+- [ ] T064 Week 1: Analyze social engagement (shares, likes, comments)
+- [ ] T065 Month 1: Identify backlinks and external citations (Ahrefs/GSC)
+- [ ] T066 Month 1: Check AI citations (ChatGPT, Claude, Perplexity manual search)
+- [ ] T067 Document performance in `analytics-log.md` (traffic, engagement, conversions)
+- [ ] T068 Identify content improvements for future posts (what worked, what didn't)
 
 **Quality Checkpoint**: Post published, distributed, and performing per baseline expectations (analytics tracked, keyword indexed, initial social engagement measured)
 
@@ -356,17 +364,30 @@ description: "Task list template for blog content production sprints"
 
 **Timeline**: Month 3 analysis (after all first 5 posts have had 4+ weeks to mature)
 
-- [ ] T165 Aggregate analytics: Traffic, engagement, conversions across all 5 posts
-- [ ] T166 Identify top-performing post (most traffic, longest time on page, highest shares)
-- [ ] T167 Identify underperforming post (lowest traffic, high bounce rate)
-- [ ] T168 Keyword analysis: Which posts rank? Which keywords are we winning?
-- [ ] T169 Backlink analysis: Which posts get cited most? Any partnerships emerging?
-- [ ] T170 Content cluster analysis: Are internal links driving traffic as expected?
-- [ ] T171 Audience analysis: What audience segments are engaged? Where are readers coming from?
-- [ ] T172 Conversion analysis: Which posts drive newsletter signups? Which drive product trials?
-- [ ] T173 Create iteration plan: Double down on winning themes, refresh underperformers
-- [ ] T174 Document lessons learned for future posts
-- [ ] T175 Update editorial guide with refined best practices
+### Content Performance Analysis
+
+- [ ] MEAS-001 Aggregate analytics: Traffic, engagement, conversions across all 5 posts
+- [ ] MEAS-002 Identify top-performing post (most traffic, longest time on page, highest shares)
+- [ ] MEAS-003 Identify underperforming post (lowest traffic, high bounce rate)
+- [ ] MEAS-004 [SEO] Keyword analysis: Which posts rank? Which keywords are we winning?
+- [ ] MEAS-005 [SEO] Backlink analysis: Which posts get cited most? Any partnerships emerging?
+- [ ] MEAS-006 Content cluster analysis: Are internal links driving traffic as expected?
+- [ ] MEAS-007 Audience analysis: What audience segments are engaged? Where are readers coming from?
+
+### Business Impact Analysis
+
+- [ ] MEAS-008 Conversion analysis: Which posts drive newsletter signups?
+- [ ] MEAS-009 Product impact: Which posts drive demo requests or SDK downloads?
+- [ ] MEAS-010 AI citation check: Are posts cited by ChatGPT, Claude, Perplexity?
+- [ ] MEAS-011 Speaking/PR opportunities: Any invitations from blog authority?
+- [ ] MEAS-012 CAC impact: Has blog reduced customer acquisition cost?
+
+### Iteration Planning
+
+- [ ] MEAS-013 Create iteration plan: Double down on winning themes, refresh underperformers
+- [ ] MEAS-014 Document lessons learned for future posts
+- [ ] MEAS-015 Update editorial guide with refined best practices
+- [ ] MEAS-016 Plan next content wave based on performance data
 
 **Quality Checkpoint**: Performance baseline established; iteration plan for future posts created
 
@@ -404,16 +425,29 @@ description: "Task list template for blog content production sprints"
 
 ---
 
-## Parallel Example: Sprint 0 Platform Setup
+## Sprint Parallelization Visualization
 
-```bash
-# Launch infrastructure setup tasks in parallel:
-Task: "Provision hosting and deploy blog platform"
-Task: "Configure domain, SSL certificate, DNS settings"
-Task: "Set up analytics platform and configure event tracking"
-Task: "Integrate newsletter platform and embed signup forms"
-Task: "Configure SEO tools and site verification"
 ```
+Week:    1    2    3    4    5    6    7    8    9   10   11   12   13   14   15   16   17   18
+         |----|----|----|----|----|----|----|----|----|----|----|----|----|----|----|----|----|
+Sprint 0 [====]                                                         (Platform Setup)
+Sprint 1      [==========]                                              (Post 1: Foundation)
+Sprint 2                [==========]                                    (Post 2: Deep Dive)
+Sprint 3                     [==========]                               (Post 3: Anti-Pattern) [P]
+Sprint 4                          [==========]                          (Post 4: Ecosystem) [P]
+Sprint 5                               [===============]                (Post 5: Benchmark/Data)
+Measure                                              [====]             (Quarterly Review)
+
+Legend:
+[====] = Sprint duration
+[P]    = Can run in parallel with prior sprint (if team capacity allows)
+```
+
+**Parallelization Rules**:
+- Sprint 0 must complete before any content sprint starts
+- Sprint 1 must publish before Sprint 2 starts (content cluster dependency)
+- Sprints 3-5 can overlap with prior sprints if team has capacity
+- Post-Sprint Measurement requires all 5 posts published + 4 weeks maturation
 
 ---
 
@@ -455,6 +489,61 @@ Task: "Configure SEO tools and site verification"
 - Dedicated SME for technical review (rotation)
 - Dedicated copyeditor
 - Dedicated distribution specialist
+
+---
+
+## Effort Summary (Template)
+
+**Fill in after completing task breakdown:**
+
+| Role | Sprint 0 | Sprint 1 | Sprint 2 | Sprint 3 | Sprint 4 | Sprint 5 | Post-Sprint | Total |
+|------|----------|----------|----------|----------|----------|----------|-------------|-------|
+| Writer | [X] hrs | [X] hrs | [X] hrs | [X] hrs | [X] hrs | [X] hrs | [X] hrs | [X] hrs |
+| SME | [X] hrs | [X] hrs | [X] hrs | [X] hrs | [X] hrs | [X] hrs | [X] hrs | [X] hrs |
+| Editor | [X] hrs | [X] hrs | [X] hrs | [X] hrs | [X] hrs | [X] hrs | [X] hrs | [X] hrs |
+| Marketing | [X] hrs | [X] hrs | [X] hrs | [X] hrs | [X] hrs | [X] hrs | [X] hrs | [X] hrs |
+| Tech Lead | [X] hrs | [X] hrs | [X] hrs | [X] hrs | [X] hrs | [X] hrs | [X] hrs | [X] hrs |
+| **Total** | **[X]** | **[X]** | **[X]** | **[X]** | **[X]** | **[X]** | **[X]** | **[X]** |
+
+**Reference Estimates** (from eval_tasks.md):
+- Sprint 0: ~40-50 hours total
+- Authority Post Sprint: ~80-90 hours total
+- Practitioner Post Sprint: ~50-60 hours total
+- Post-Sprint Measurement: ~15-20 hours total
+
+---
+
+## Validation Checklist
+
+Before starting content production, verify:
+
+### Task Completeness
+- [ ] All 6 phases defined per sprint (Research, Draft, Review, Edit, Publish, Measure)
+- [ ] Sprint 0 includes all platform setup and editorial foundation tasks
+- [ ] Each post sprint includes [SEO] tasks at every phase
+- [ ] Technical Review phase includes [NO SELF-VALIDATION] markers
+- [ ] Measurement phase includes AI citation check task
+
+### SEO Integration
+- [ ] [SEO] Keyword research task in Phase 1
+- [ ] [SEO] Internal/external linking tasks in Phase 2
+- [ ] [SEO] 40-point checklist gate task in Phase 4
+- [ ] [SEO] JSON-LD and canonical URL tasks in Phase 5
+- [ ] [SEO] Keyword ranking check in Phase 6
+
+### Operational Readiness
+- [ ] Target keyword defined per sprint
+- [ ] Evidence tier documented per sprint
+- [ ] Quality checkpoints defined per sprint
+- [ ] Parallel opportunities marked with [P]
+- [ ] Dependencies explicit between sprints
+- [ ] Effort summary completed with hour estimates
+
+### Constitution Alignment
+- [ ] [NO SELF-VALIDATION] enforced on all technical review tasks
+- [ ] Limitations section task included for authority posts
+- [ ] Evidence tier validation task in Phase 3
+- [ ] FAQ and Key Takeaways tasks for AI discoverability
 
 ---
 

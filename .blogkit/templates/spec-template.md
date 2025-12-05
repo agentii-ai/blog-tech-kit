@@ -14,9 +14,53 @@
   - Blog type and content pillars
   - Publishing cadence and success metrics
   - Distribution and engagement goals
+  - SEO strategy and keyword targeting (content-level, not technical implementation)
 
   Technology choices belong in plan.md, NOT here.
 -->
+
+---
+
+## SEO Foundation *(mandatory - integrated at specification stage)*
+
+<!--
+  SEO begins at specification, not implementation. Define your content's search positioning here.
+-->
+
+### Primary Keyword Strategy
+
+| Pillar | Target Keyword | Search Intent | Monthly Volume | Competition |
+|--------|----------------|---------------|----------------|-------------|
+| [Pillar 1] | [primary keyword] | [informational/transactional/navigational] | [estimate] | [low/medium/high] |
+| [Pillar 2] | [primary keyword] | [intent] | [estimate] | [competition] |
+| [Pillar 3] | [primary keyword] | [intent] | [estimate] | [competition] |
+
+**Keyword Selection Criteria**:
+- Target keywords with < 5,000 monthly search volume initially (lower competition)
+- Prioritize long-tail keywords with high intent ("how to build X" vs "what is X")
+- Validate search intent matches content type (informational for authority, transactional for practitioner)
+
+### Content Cluster Strategy
+
+**Hub Pages** (Pillar Content):
+- Each pillar should have 1 comprehensive hub page (3,000-6,000+ words)
+- Hub pages target primary keyword and link to all cluster posts
+- Hub pages are updated quarterly with new cluster links
+
+**Cluster Posts** (Supporting Content):
+- 8-12 supporting posts per pillar
+- Each cluster post targets a long-tail variation of pillar keyword
+- All cluster posts link back to hub page (topical authority signal)
+
+### E-E-A-T Signals
+
+**Experience**: [How will content demonstrate real-world experience? e.g., "Production case studies from our deployments"]
+
+**Expertise**: [What credentials/expertise will authors showcase? e.g., "Written by engineers who built the system"]
+
+**Authoritativeness**: [How will content establish authority? e.g., "Original research, benchmarks, and methodology disclosure"]
+
+**Trustworthiness**: [How will content build trust? e.g., "Limitations sections, honest failure documentation"]
 
 ## Blog Type Declaration *(mandatory)*
 
@@ -69,45 +113,76 @@
 
 <!--
   3-5 core themes that align with product value and audience needs.
-  Each pillar should be problem-first, not technology-first.
+  Each pillar MUST be problem-first, not technology-first.
+  Include SEO targeting for each pillar.
 -->
 
 ### Pillar 1: [Problem-Focused Title]
 
-**Description**: [What problem does this pillar address?]
+**Problem Statement**: [What specific problem does this pillar solve? State in user's language, not technical jargon.]
 
-**Example Topics**:
-- [Topic 1]
-- [Topic 2]
-- [Topic 3]
+**Why This Matters**: [Why is this problem painful? What are the consequences of not solving it?]
+
+**Our Perspective**: [What unique insight or approach does your content offer?]
+
+**Target Keyword**: [Primary keyword for this pillar's hub page]
+
+**Search Intent**: [Informational / Transactional / Navigational]
+
+**Example Topics** (cluster posts):
+- [Topic 1 - with target long-tail keyword]
+- [Topic 2 - with target long-tail keyword]
+- [Topic 3 - with target long-tail keyword]
 
 **Product Connection**: [How does this relate to your product/service?]
+
+**Evidence Sources**: [What Tier 1-3 evidence will support this pillar? See constitution for evidence tiers.]
 
 ---
 
 ### Pillar 2: [Problem-Focused Title]
 
-**Description**: [What problem does this pillar address?]
+**Problem Statement**: [What specific problem does this pillar solve?]
+
+**Why This Matters**: [Why is this problem painful?]
+
+**Our Perspective**: [What unique insight does your content offer?]
+
+**Target Keyword**: [Primary keyword]
+
+**Search Intent**: [Intent type]
 
 **Example Topics**:
-- [Topic 1]
-- [Topic 2]
-- [Topic 3]
+- [Topic 1 - with keyword]
+- [Topic 2 - with keyword]
+- [Topic 3 - with keyword]
 
-**Product Connection**: [How does this relate to your product/service?]
+**Product Connection**: [Relationship to product]
+
+**Evidence Sources**: [Tier 1-3 evidence]
 
 ---
 
 ### Pillar 3: [Problem-Focused Title]
 
-**Description**: [What problem does this pillar address?]
+**Problem Statement**: [What specific problem does this pillar solve?]
+
+**Why This Matters**: [Why is this problem painful?]
+
+**Our Perspective**: [What unique insight does your content offer?]
+
+**Target Keyword**: [Primary keyword]
+
+**Search Intent**: [Intent type]
 
 **Example Topics**:
-- [Topic 1]
-- [Topic 2]
-- [Topic 3]
+- [Topic 1 - with keyword]
+- [Topic 2 - with keyword]
+- [Topic 3 - with keyword]
 
-**Product Connection**: [How does this relate to your product/service?]
+**Product Connection**: [Relationship to product]
+
+**Evidence Sources**: [Tier 1-3 evidence]
 
 ---
 
@@ -121,10 +196,34 @@
 
 **Rationale**: [Why this cadence? Consider team capacity and blog type]
 
-**Content Calendar Strategy**:
-- **Month 1-3**: [Foundation phase - what types of posts?]
-- **Month 4-6**: [Expansion phase - what types of posts?]
-- **Month 7-12**: [Authority phase - what types of posts?]
+### Team Capacity Validation *(required)*
+
+| Role | Available FTE | Hours/Week | Posts Supported |
+|------|---------------|------------|------------------|
+| Writer | [X] FTE | [X] hrs | [X] posts/month |
+| SME/Reviewer | [X] FTE | [X] hrs | [X] reviews/month |
+| Editor | [X] FTE | [X] hrs | [X] edits/month |
+| Marketing | [X] FTE | [X] hrs | [X] promotions/month |
+
+**Capacity Check**: [State cadence] requires approximately [X] FTE. Team has [Y] FTE available. ✅/❌
+
+**Reference** (from constitution):
+- 1-2 posts/month = 0.5 FTE minimum
+- 3-4 posts/month = 1.5 FTE minimum
+- 6-8 posts/month = 3 FTE minimum
+- 10+ posts/month = 5+ FTE minimum
+
+### Content Calendar Strategy
+
+- **Month 1-3 (Foundation)**: [X] posts
+  - Focus: [Pillar priority, hub pages or cluster posts?]
+  - Goal: [e.g., "Establish 3 hub pages, 6 cluster posts"]
+- **Month 4-6 (Expansion)**: [X] posts
+  - Focus: [Content expansion strategy]
+  - Goal: [e.g., "Complete Pillar 1 cluster, start Pillar 2"]
+- **Month 7-12 (Authority)**: [X] posts
+  - Focus: [Authority building strategy]
+  - Goal: [e.g., "Original research, content updates, link building"]
 
 ---
 
@@ -193,13 +292,20 @@
 
 [Add more content journeys as needed]
 
-### Edge Cases
+### Edge Cases & Contingencies *(minimum 8 required)*
 
-- What if content doesn't rank in search within 3 months?
-- How do we handle outdated content (e.g., API changes)?
-- What if viral post drives traffic but low conversion?
-- How do we respond to negative comments or criticism?
-- What if competitor publishes similar content first?
+| # | Scenario | Trigger | Mitigation Strategy |
+|---|----------|---------|---------------------|
+| 1 | Content doesn't rank in 3 months | No page 1 position after 90 days | Refresh content, expand sections, add internal links, re-promote |
+| 2 | Outdated content (API changes) | Product/API update | Quarterly content audit, update within 2 weeks of changes |
+| 3 | Viral post, low conversion | High traffic, < 1% signup rate | Add contextual CTAs, improve lead magnets, A/B test offers |
+| 4 | Negative comments/criticism | Public criticism on post | Respond professionally within 24 hours, document learnings |
+| 5 | Competitor publishes first | Similar content appears | Differentiate angle, add original research, cite competitor fairly |
+| 6 | Writer burnout/capacity drop | Quality decline, missed deadlines | Reduce cadence, bring freelance support, batch content creation |
+| 7 | Algorithm/ranking change | Sudden traffic drop (>30%) | Diversify traffic sources, analyze changes, adapt strategy |
+| 8 | SME reviewer bottleneck | Review delays > 1 week | Batch reviews, train backup reviewers, simplify review checklist |
+| 9 | Seasonal traffic variation | Traffic drops during holidays | Plan evergreen content, adjust expectations, pre-schedule posts |
+| 10 | AI system citation changes | AI stops citing content | Monitor citation patterns, adapt structured data, diversify formats |
 
 ---
 
@@ -221,10 +327,17 @@
 ### Content Quality
 
 - **CR-006**: Posts MUST be 1,500+ words for Authority blog | 800-1,200 words for Practitioner | varies for Community
-- **CR-007**: Posts MUST include clear problem statement in first 2 paragraphs
-- **CR-008**: Posts MUST include practical takeaways or action items
-- **CR-009**: Posts MUST pass readability check (Flesch-Kincaid grade level appropriate for audience)
+- **CR-007**: Posts MUST include clear problem statement in first 2 paragraphs (problem-first framing)
+- **CR-008**: Posts MUST include practical takeaways or action items (Key Takeaways section)
+- **CR-009**: Posts MUST pass readability check (Flesch-Kincaid grade 11-14 for technical audience)
 - **CR-010**: Posts MUST include meta description (150-160 characters) and Open Graph tags
+
+### Evidence & Limitations
+
+- **CR-010A**: All technical claims MUST be supported by Tier 1-3 evidence (see constitution for tiers)
+- **CR-010B**: Authority posts MUST include "Limitations" or "When This Doesn't Apply" section (min 150 words)
+- **CR-010C**: Practitioner posts MUST include "Edge Cases" or "Common Pitfalls" section
+- **CR-010D**: No Tier 4 (anecdotal/unverified) claims may appear as primary support
 
 ### AI Discoverability
 
@@ -256,14 +369,17 @@
 <!--
   Define measurable outcomes. These must be technology-agnostic and measurable.
   Align metrics with blog type (Authority, Practitioner, Community, Thought Leadership).
+  Include intermediate milestones (Month 1, 3, 6, 12) for key metrics.
 -->
 
 ### Content Performance Metrics
 
-- **SC-001**: Achieve [X] monthly unique visitors by Month [N]
+- **SC-001**: Organic traffic growth
+  - Month 1: [X]K visitors | Month 3: [X]K | Month 6: [X]K | Month 12: [X]K+
 - **SC-002**: Maintain [X]% organic search traffic (not paid/social only)
 - **SC-003**: Average [X] minutes time-on-page across all posts
-- **SC-004**: [X]% of posts rank on page 1 for target keyword within 3 months
+- **SC-004**: Keyword ranking progression
+  - Month 1: [X]% posts indexed | Month 2: [X]% page 2+ | Month 3: [X]% page 1
 
 ### Engagement & Distribution Metrics
 
@@ -354,15 +470,32 @@
 
 Before moving to `/blogkit.plan`, verify:
 
+### Content Strategy Validation
 - [ ] Blog type explicitly defined (Authority, Practitioner, Community, or Thought Leadership)
-- [ ] Target audience persona documented with specific pain points
-- [ ] 3-5 content pillars defined and aligned with product value
-- [ ] Publishing cadence realistic for team capacity
-- [ ] Success criteria measurable and blog-type-appropriate (at least 3 metrics)
+- [ ] Target audience persona documented with specific pain points and discovery channels
+- [ ] 3-5 content pillars defined with problem statements (problem-first, not technology-first)
+- [ ] Each pillar has explicit "Why This Matters" and "Our Perspective" sections
+- [ ] Content pillars align with product value proposition
+
+### SEO Validation
+- [ ] Primary keyword identified for each pillar
+- [ ] Search intent validated for target keywords (informational/transactional/navigational)
+- [ ] Content cluster strategy defined (hub pages + cluster posts)
+- [ ] Keyword competition assessed (target < 5,000 monthly volume for low competition)
+- [ ] E-E-A-T signals documented (Experience, Expertise, Authoritativeness, Trustworthiness)
+
+### Operational Validation
+- [ ] Publishing cadence realistic for team capacity (FTE validation complete)
+- [ ] Team capacity check: Required FTE ≤ Available FTE
+- [ ] Edge cases documented (minimum 8 scenarios with mitigation strategies)
+- [ ] Evidence sources identified for each pillar (Tier 1-3 only)
+
+### Quality Validation
+- [ ] Success criteria measurable and blog-type-appropriate (at least 3 metrics with milestones)
 - [ ] NO technology implementation details (CMS, frameworks, hosting) present in this spec
 - [ ] Content requirements are testable and unambiguous
 - [ ] All [NEEDS CLARIFICATION] markers resolved (max 3 total)
-- [ ] Content pillars address problems first, not technologies
+- [ ] Limitations requirement acknowledged for authority posts
 
 ---
 
@@ -371,6 +504,20 @@ Before moving to `/blogkit.plan`, verify:
 ---
 
 ## Example: Authority Blog for AI/LLM Developers
+
+### SEO Foundation (Example)
+
+| Pillar | Target Keyword | Search Intent | Monthly Volume | Competition |
+|--------|----------------|---------------|----------------|-------------|
+| Production Agent Patterns | "production ai agent patterns" | Informational | ~2,400 | Low |
+| Context Engineering | "llm context engineering" | Informational | ~1,800 | Low |
+| Multi-Agent Orchestration | "multi agent orchestration" | Informational | ~3,200 | Medium |
+
+**E-E-A-T Signals**:
+- **Experience**: Production case studies from our own agent deployments
+- **Expertise**: Written by engineers who built the systems
+- **Authoritativeness**: Original benchmarks with full methodology disclosure
+- **Trustworthiness**: Limitations sections documenting what doesn't work
 
 ### Blog Type Declaration
 
@@ -394,31 +541,43 @@ Before moving to `/blogkit.plan`, verify:
   - No clear patterns for structuring complex agent workflows
 - **Where They Are**: Hacker News, DEV.to, Engineering Twitter, AI Discord communities, LangChain Slack
 
-### Content Pillars
+### Content Pillars (Example with SEO)
 
 **Pillar 1: Production-Grade Agent Patterns**
-- How to structure agents for reliability and observability
-- Error handling, retries, and circuit breakers in multi-agent systems
-- Testing agents in staging vs. production
+- **Problem Statement**: Engineers struggle to move AI agents from demos to production-grade systems
+- **Target Keyword**: "production ai agent patterns"
+- **Hub Page**: "The Complete Guide to Production AI Agent Patterns" (4,000 words)
+- **Cluster Posts**:
+  - "How to structure agents for reliability" → "ai agent reliability patterns"
+  - "Error handling in multi-agent systems" → "multi agent error handling"
+  - "Testing agents in staging vs production" → "testing ai agents production"
+- **Evidence Sources**: Internal benchmarks (Tier 3), industry case studies (Tier 2)
 
 **Pillar 2: Context Engineering for AI Systems**
-- How to architect prompts and context for consistency
-- Measuring prompt performance and iterating
-- Reducing hallucination through structured context
+- **Problem Statement**: LLM outputs are inconsistent because context is poorly architected
+- **Target Keyword**: "llm context engineering"
+- **Hub Page**: "Context Engineering for LLMs: A Production Guide" (3,500 words)
+- **Cluster Posts**:
+  - "Architecting prompts for consistency" → "llm prompt architecture"
+  - "Measuring prompt performance" → "measuring llm prompt performance"
+  - "Reducing hallucination through context" → "reduce llm hallucination"
+- **Evidence Sources**: Academic papers on hallucination (Tier 1), our internal metrics (Tier 3)
 
-**Pillar 3: Multi-Agent Orchestration**
-- Coordinating specialized agents for complex tasks
-- Communication patterns between agents
-- Resource constraints and cost optimization
+### Publishing Cadence (with Capacity Validation)
 
-### Publishing Cadence
-- Target: 2 Authority posts per month + 2 tutorials/practitioner posts
-- Authority posts: 2,000-4,000 words, 4-6 week research/writing cycle
-- Practitioner posts: 800-1,500 words, 2-week cycle
-- Total: ~15 posts in first 6 months
+**Frequency**: 4 posts/month (2 authority + 2 practitioner)
 
-### Success Metrics
-- **Authority Blog Success**: 50+ high-quality backlinks in month 6, 5K+ monthly pageviews to authority posts, 3+ citations by other technical blogs
-- **Team Thought Leadership**: 10+ speaking invitations from these posts, media mentions citing the blog
-- **Engagement**: Average time-on-page > 4 minutes, 2+ internal links per post followed
-- **Product Impact**: 30%+ of inbound demo requests cite blog as discovery source
+| Role | Available FTE | Hours/Week | Posts Supported |
+|------|---------------|------------|------------------|
+| Writer | 1.0 FTE | 40 hrs | 4 posts/month |
+| SME/Reviewer | 0.25 FTE | 10 hrs | 4 reviews/month |
+| Editor | 0.25 FTE | 10 hrs | 4 edits/month |
+
+**Capacity Check**: 4 posts/month requires ~1.5 FTE. Team has 1.5 FTE available. ✅
+
+### Success Metrics (with Milestones)
+- **Organic Traffic**: M1: 2K | M3: 8K | M6: 20K | M12: 50K+
+- **Keyword Rankings**: M3: 30% page 1 | M6: 50% page 1
+- **Backlinks**: 50+ high-quality backlinks by Month 6
+- **AI Citations**: 5+ citations in ChatGPT/Claude responses by Month 12
+- **Business Impact**: 30%+ of inbound demo requests cite blog as discovery source

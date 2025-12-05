@@ -56,15 +56,28 @@
 - JSON-LD Article schema present
 - Internal links to 2-3 related posts (content cluster)
 
-### Roles & Responsibilities
+### Roles & Responsibilities (with FTE Allocation)
 
-| Role | Responsibility | Time Commitment |
-|------|---------------|-----------------|
-| **Writer** | Research, outline, draft, revisions | [e.g., 10-15 hrs/post] |
-| **Subject Matter Expert (SME)** | Technical validation, code review, accuracy check | [e.g., 2-3 hrs/post] |
-| **Copyeditor** | Grammar, clarity, readability, SEO | [e.g., 2-3 hrs/post] |
-| **Reviewer (Optional)** | Pre-publish final check | [e.g., 1 hr/post] |
-| **Marketing/Distribution** | Social copy, newsletter, community distribution | [e.g., 2-3 hrs/post] |
+| Role | FTE | Hrs/Week | Responsibility | Posts Supported |
+|------|-----|----------|----------------|------------------|
+| **Writer** | [X] FTE | [X] hrs | Research, outline, draft, revisions | [X] posts/month |
+| **SME (Reviewer)** | [X] FTE | [X] hrs | Technical validation, code review, accuracy check | [X] reviews/month |
+| **Copyeditor** | [X] FTE | [X] hrs | Grammar, clarity, readability, SEO optimization | [X] edits/month |
+| **Marketing** | [X] FTE | [X] hrs | Social copy, newsletter, community distribution | [X] promos/month |
+| **Liaison (Optional)** | Ad hoc | As needed | Cross-functional coordination, stakeholder updates | N/A |
+
+**Time Per Post by Type**:
+
+| Post Type | Writer | SME | Editor | Marketing | Total |
+|-----------|--------|-----|--------|-----------|-------|
+| Authority (6 wk) | 15-25 hrs | 3-4 hrs | 3-5 hrs | 3-4 hrs | 24-38 hrs |
+| Practitioner (2 wk) | 8-12 hrs | 2-3 hrs | 2-3 hrs | 2-3 hrs | 14-21 hrs |
+| Community (1 wk) | 4-6 hrs | 1-2 hrs | 1-2 hrs | 1-2 hrs | 7-12 hrs |
+
+**Capacity Validation**:
+- **Required**: [X] FTE for [Y] posts/month
+- **Available**: [Z] FTE
+- **Status**: ✅ Sufficient / ❌ Insufficient → [Action if insufficient]
 
 **CRITICAL**: Technical validation MUST be done by someone other than the author (per constitution principle: "No Self-Validation").
 
@@ -149,19 +162,55 @@
 - Add context comments explaining what the code does
 - Link to full GitHub repo when applicable
 
-### SEO Implementation Checklist
+### SEO Implementation Checklist (40-Point Gate)
 
-- [ ] Target keyword identified (< 5,000 monthly search volume for low competition)
-- [ ] Keyword in: Title, H2, first 100 words, meta description, URL slug
-- [ ] Meta description 150-160 characters
-- [ ] Open Graph tags (og:title, og:description, og:image)
-- [ ] Twitter Card tags (twitter:card, twitter:title, twitter:description, twitter:image)
-- [ ] Canonical URL set
-- [ ] Image alt text descriptive and includes keyword where natural
-- [ ] Internal links to 2-3 related posts (content cluster strategy)
-- [ ] External links to 1-2 authoritative sources (signals credibility)
-- [ ] Sitemap generated automatically
-- [ ] Robots.txt configured (allow indexing)
+#### Keyword & Content (10 items)
+- [ ] Target keyword identified (< 5,000 monthly search volume initially)
+- [ ] Search intent validated (informational/transactional/navigational)
+- [ ] Keyword in H1 title (natural placement)
+- [ ] Keyword in first 100 words of content
+- [ ] Keyword in 1-2 H2 headings (natural placement)
+- [ ] Keyword in URL slug (hyphenated, lowercase)
+- [ ] Long-tail variations included in H3s and body
+- [ ] Content length meets blog type requirement (Authority: 1,500+, Practitioner: 800-1,200)
+- [ ] Problem-first framing in opening paragraphs
+- [ ] Key Takeaways section (3-5 extractable bullets)
+
+#### Metadata & Schema (10 items)
+- [ ] Meta title ≤60 characters, includes keyword + brand
+- [ ] Meta description 150-160 characters, includes keyword + value + CTA
+- [ ] Open Graph tags: og:title, og:description, og:image, og:url, og:type
+- [ ] Twitter Card tags: twitter:card (summary_large_image), twitter:title, twitter:description, twitter:image
+- [ ] Canonical URL set (self-referencing or pointing to original)
+- [ ] JSON-LD Article schema: headline, author, datePublished, dateModified, image
+- [ ] JSON-LD Author schema: name, url, jobTitle
+- [ ] JSON-LD Organization schema: name, url, logo
+- [ ] hreflang tags (if multilingual planned)
+- [ ] robots meta (index, follow)
+
+#### Structure & Linking (10 items)
+- [ ] H1 → H2 → H3 hierarchy (no skipped levels)
+- [ ] 3-7 H2 sections per post
+- [ ] Internal links to 3-5 related posts (content cluster strategy)
+- [ ] Internal links to hub/pillar page
+- [ ] External links to 2-3 authoritative sources
+- [ ] Anchor text descriptive (not "click here")
+- [ ] Breadcrumb navigation present
+- [ ] Table of Contents for posts 2,000+ words
+- [ ] FAQ section (4-6 Q&A pairs) for posts 1,500+ words
+- [ ] Related posts section at end of article
+
+#### Technical & Performance (10 items)
+- [ ] Images optimized (<200KB, WebP format preferred)
+- [ ] Image alt text descriptive, includes keyword where natural
+- [ ] Lazy loading for below-fold images
+- [ ] Core Web Vitals targets: LCP < 2.5s, CLS < 0.1, FID < 100ms
+- [ ] Mobile-responsive design tested
+- [ ] Page load < 3s on 3G connection
+- [ ] Sitemap.xml includes post URL
+- [ ] Robots.txt allows indexing
+- [ ] No broken internal/external links
+- [ ] Code examples language-tagged and tested
 
 ---
 
@@ -186,23 +235,40 @@
 - Discord/Slack communities (share when relevant to conversation)
 - GitHub Discussions (if open-source project blog)
 
-### Social Distribution Workflow
+### Social Distribution Workflow (Hour-by-Hour Day 0)
 
-**Day 0 (Publish):**
-- [ ] Publish post on blog
-- [ ] Send newsletter to subscribers automatically
-- [ ] Tweet thread (3-5 tweets) with key takeaways
-- [ ] LinkedIn post (text + link)
+| Time | Activity | Owner | Platform |
+|------|----------|-------|----------|
+| **Hour 0** | Publish post, verify SEO/schema | Editor | Blog |
+| **Hour 1** | Newsletter sent (automated or manual) | Marketing | ConvertKit |
+| **Hour 2** | Twitter/X thread (1 main + 5-7 follow-ups) | Marketing | Twitter |
+| **Hour 3** | LinkedIn post (narrative angle) | Marketing | LinkedIn |
+| **Hour 4** | Respond to early comments | Writer | All platforms |
+| **Hour 6** | Cross-post to Dev.to (with canonical) | Marketing | Dev.to |
+| **Hour 8** | Share in Discord/Slack communities | Marketing | Community |
 
 **Day 1-2 (Amplification):**
-- [ ] Cross-post to Dev.to with canonical link
-- [ ] Share in relevant Discord/Slack communities (genuine participation, not spam)
-- [ ] Respond to all comments on blog and social platforms
+- [ ] Monitor engagement metrics (likes, shares, comments)
+- [ ] Respond to all comments within 24 hours
+- [ ] Cross-post to Hashnode/Medium if planned (with canonical URL)
+- [ ] Create quote graphics for social re-sharing
 
 **Day 3-7 (Community):**
-- [ ] Submit to Hacker News if appropriate (Show HN format)
-- [ ] Share in Reddit communities (follow community rules, add value)
-- [ ] Monitor backlinks and citations
+- [ ] Submit to Hacker News (Tue/Wed/Thu, 7-9 AM EST)
+- [ ] Share in Reddit communities (genuine value-add, not promotional)
+- [ ] Monitor backlinks and AI citations (manual check)
+- [ ] Engage with any community discussion threads
+
+### Content Repurposing (Per Post)
+
+| Asset | Format | Timeline | Owner |
+|-------|--------|----------|-------|
+| Twitter thread | 1 main + 5-7 tweets | Day 0 | Marketing |
+| LinkedIn post | Long-form narrative | Day 0 | Marketing |
+| Quote graphics | 3-5 images | Day 1 | Marketing |
+| Newsletter segment | Excerpt + CTA | Day 0 | Marketing |
+| Cross-post | Dev.to/Hashnode | Day 1 | Marketing |
+| Podcast talking points | If applicable | Week 2 | Writer |
 
 ### Newsletter Strategy
 
@@ -252,28 +318,42 @@ These 5 posts establish authority, generate backlinks, and create content cluste
 
 ---
 
-## Constitution Check
+## Constitution Check (with Implementation Evidence)
 
 *GATE: Must pass before beginning production. Re-check after first 3 posts published.*
 
 [Gates determined based on constitution file in .blogkit/memory/constitution.md]
 
-**Blog-Specific Principles**:
+### Principle Alignment Table
 
-- [ ] **Content-First**: Technology choices made AFTER content strategy defined (spec.md → plan.md)
-- [ ] **No Self-Validation**: Technical review by SME who didn't write the post
-- [ ] **Simplicity & Focus**: No custom CMS before 10 published posts (use battle-tested platform)
-- [ ] **AI-Native Distribution**: JSON-LD schema, clear H2/H3 hierarchy, FAQ sections present
-- [ ] **Community Over Broadcast**: Blog features community work, contributors share their features
-- [ ] **Transparency Over Perfection**: Edge cases documented, failure modes shared honestly
-- [ ] **Long-term Over Quick Wins**: Blog strategy designed for 2-3 year compounding, not viral moments
-- [ ] **Measurable Outcomes**: Every success criterion from spec.md has tracking implementation defined
+| # | Principle | Status | Implementation Evidence |
+|---|-----------|--------|-------------------------|
+| I | **Content-First** | ✅/❌ | [e.g., "spec.md completed before plan.md, no tech choices in spec"] |
+| II | **Principle-Driven Content** | ✅/❌ | [e.g., "Blog type declared (Authority), content pillars problem-first"] |
+| II-A | **Evidence Standards** | ✅/❌ | [e.g., "Evidence tier identified per pillar, no Tier 4 claims"] |
+| II-B | **Honest Limitations** | ✅/❌ | [e.g., "Limitations section required in editorial checklist"] |
+| III | **Test-First Quality** | ✅/❌ | [e.g., "Success criteria defined in spec, tracking tools mapped"] |
+| IV | **SEO-First Architecture** | ✅/❌ | [e.g., "40-point SEO checklist, keywords per pillar, JSON-LD templates"] |
+| IV-A | **AI-Native Distribution** | ✅/❌ | [e.g., "JSON-LD schema, H1→H2→H3 hierarchy, FAQ sections required"] |
+| V | **Incremental Delivery** | ✅/❌ | [e.g., "4-quarter content calendar, first 5 posts detailed"] |
+| VI | **Observability & Measurement** | ✅/❌ | [e.g., "Plausible + GSC configured, monthly dashboard review"] |
+| VII | **Simplicity & Focus** | ✅/❌ | [e.g., "Next.js + MDX (proven stack), no custom CMS before 10 posts"] |
+| VIII | **Versioning** | ✅/❌ | [e.g., "Plan versioned, breaking changes documented"] |
 
-**Complexity Review**:
+**Principle Validation Summary**:
+- Principles Passed: [X]/11
+- Principles Failed: [X]/11 (list which ones)
+- **Overall Status**: ✅ Ready / ❌ Blocked on [principle]
+
+### Complexity Review
 
 > **Fill ONLY if Constitution Check has violations that must be justified**
 
-[Example: "Custom CMS chosen before 10 posts - Justification: Team already has Next.js expertise, no additional complexity"]
+| Principle Violated | Justification | Risk Accepted By | Expiration |
+|--------------------|---------------|------------------|------------|
+| [e.g., VII Simplicity] | [e.g., "Team has Next.js expertise"] | [Owner] | [Date] |
+
+**Note**: Exceptions expire after 3 months and require re-evaluation per constitution governance.
 
 ---
 
@@ -476,6 +556,39 @@ frontend/
 
 ---
 
+## Budget & Tool Costs
+
+### Monthly Tool Costs
+
+| Tool | Purpose | Cost/Month | Annual |
+|------|---------|------------|--------|
+| **Hosting** (Vercel/Netlify) | Deployment, CDN | $[X] | $[X] |
+| **Analytics** (Plausible/GA4) | Traffic tracking | $[X] | $[X] |
+| **Newsletter** (ConvertKit) | Email automation | $[X] | $[X] |
+| **SEO Tools** (Ahrefs/GSC) | Keyword tracking | $[X] | $[X] |
+| **Domain** | Custom URL | $[X] | $[X] |
+| **Total Tools** | | **$[X]/mo** | **$[X]/yr** |
+
+### Team Costs (if applicable)
+
+| Role | Hours/Month | Rate | Cost/Month |
+|------|-------------|------|------------|
+| Writer | [X] hrs | $[X]/hr | $[X] |
+| SME | [X] hrs | $[X]/hr | $[X] |
+| Editor | [X] hrs | $[X]/hr | $[X] |
+| Marketing | [X] hrs | $[X]/hr | $[X] |
+| **Total Team** | | | **$[X]/mo** |
+
+### Total Monthly Budget
+
+| Category | Cost |
+|----------|------|
+| Tools | $[X] |
+| Team | $[X] |
+| **Total** | **$[X]/mo** |
+
+---
+
 ## Constraints
 
 **Editorial Capacity**: [e.g., "1 writer, part-time (20 hrs/week) = max 2 practitioner posts/month"]
@@ -492,15 +605,21 @@ frontend/
 
 ---
 
-## Risks & Mitigations
+## Risks & Mitigations (with Owners)
 
-| Risk | Impact | Likelihood | Mitigation |
-|------|--------|------------|------------|
-| **Content doesn't rank** | High (no organic traffic) | Medium | Keyword research upfront, target low-competition keywords, build backlinks through ecosystem partnerships |
-| **Writer capacity insufficient** | Medium (slow publishing) | High | Start with 1 post/month, hire freelancer if traction proven, reuse content cluster strategy to amplify fewer posts |
-| **Technical accuracy errors** | High (trust damage) | Low | Mandatory SME review by non-author, test all code examples in CI/CD |
-| **Platform costs exceed budget** | Low (blog still functions) | Low | Start with free tier (Vercel, Netlify), upgrade only when traffic justifies it |
-| **Competitor publishes similar content first** | Medium (less differentiation) | Medium | Monitor competitor blogs weekly, pivot angle if needed, add unique data/research |
+| # | Risk | Impact | Likelihood | Mitigation | Owner |
+|---|------|--------|------------|------------|-------|
+| 1 | **Content doesn't rank** | High | Medium | Keyword research upfront, target < 5K volume keywords, build backlinks through ecosystem partnerships, refresh after 90 days if no traction | Writer + Marketing |
+| 2 | **Writer capacity insufficient** | Medium | High | Start with 1 post/month, hire freelancer if traction proven, batch content creation, reduce cadence before quality | Writer |
+| 3 | **Technical accuracy errors** | High | Low | Mandatory SME review by non-author (NO SELF-VALIDATION), test all code examples in CI, document evidence tier for claims | SME |
+| 4 | **Platform costs exceed budget** | Low | Low | Start with free tier (Vercel, Netlify), upgrade only when traffic > 50K/month, monitor costs monthly | Tech Lead |
+| 5 | **Competitor publishes first** | Medium | Medium | Monitor competitor blogs weekly, pivot angle if needed, add unique data/research, cite competitor fairly | Writer |
+| 6 | **SME reviewer bottleneck** | Medium | Medium | Batch reviews weekly, train backup reviewer, simplify review checklist, set 72-hour SLA | SME |
+| 7 | **Algorithm/ranking change** | High | Low | Diversify traffic sources (newsletter, social), monitor GSC weekly, adapt within 2 weeks | Marketing |
+| 8 | **Viral post, low conversion** | Medium | Low | Add contextual CTAs, improve lead magnets, A/B test offers, add email capture before full content | Marketing |
+| 9 | **Writer burnout** | High | Medium | Sustainable cadence (quality > quantity), content batching, freelance backup, celebrate wins | Writer |
+
+**Risk Review Cadence**: Monthly review in Phase 3 analysis
 
 ---
 
@@ -540,16 +659,36 @@ frontend/
 
 Before moving to `/blogkit.tasks`, verify:
 
-- [ ] Editorial workflow defined (roles, timelines, quality control)
-- [ ] Technical stack chosen (CMS, framework, hosting, analytics, newsletter)
-- [ ] AI optimization strategy documented (JSON-LD, heading hierarchy, code examples)
-- [ ] Distribution strategy defined (3-tier model: owned, amplification, community)
-- [ ] Content calendar mapped (Year 1 plan, first 5 posts)
-- [ ] Constitution Check passed (all 8 Core Blog Principles validated)
-- [ ] Success criteria tracking implementation defined (how each SC will be measured)
-- [ ] No [NEEDS CLARIFICATION] markers remain (or research phase planned)
+### Editorial & Operations
+- [ ] Editorial workflow defined (4-pass process, roles, timelines)
+- [ ] Roles defined with FTE allocation and hours per post type
+- [ ] Team capacity validated (Required FTE ≤ Available FTE)
 - [ ] Dependencies and constraints documented
-- [ ] Risks identified with mitigations
+- [ ] Risks identified with mitigations and owners (minimum 8 risks)
+- [ ] Budget documented (tool costs + team costs if applicable)
+
+### Technical Stack
+- [ ] Technical stack chosen with rationale (CMS, framework, hosting, analytics, newsletter)
+- [ ] Performance targets defined (Core Web Vitals: LCP, CLS, FID)
+- [ ] Repository structure defined and documented
+- [ ] Code validation process defined (CI/CD or manual testing)
+
+### SEO & AI Optimization
+- [ ] 40-point SEO checklist present and customized
+- [ ] JSON-LD schema templates defined (Article, Author, Organization)
+- [ ] Heading hierarchy requirements documented (H1→H2→H3)
+- [ ] AI discoverability strategy documented (FAQ sections, Key Takeaways)
+
+### Distribution & Measurement
+- [ ] Distribution strategy defined (3-tier model with Day 0-7 timeline)
+- [ ] Newsletter strategy defined (frequency, structure, growth tactics)
+- [ ] Content calendar mapped (Year 1 plan, first 5 posts detailed)
+- [ ] Success criteria tracking implementation defined (tool + formula per SC)
+
+### Governance
+- [ ] Constitution Check passed (all principles validated with evidence)
+- [ ] No [NEEDS CLARIFICATION] markers remain (or research phase planned)
+- [ ] Plan version documented (for future change tracking)
 
 ---
 
