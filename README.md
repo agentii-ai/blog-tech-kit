@@ -53,6 +53,10 @@ uvx --from git+https://github.com/agentii-ai/blog-tech-kit.git blog check
 
 > **Note**: This project is improving rapidly. We recommend `uvx` to always get the latest features and fixes.
 
+![One-time installation with uvx](./media/test1.png)
+
+*Running `blog init` shows an interactive wizard to select your AI assistant*
+
 #### Option 2: Persistent Installation
 
 Install once and use everywhere (may require periodic updates):
@@ -82,6 +86,10 @@ cd my-ai-blog
 ```
 
 This creates a project with blog-specific templates, constitution, and agent commands.
+
+![Successful blog project initialization](./media/test2.png)
+
+*After setup completes, you'll see all available slash commands and next steps*
 
 ### 3. Launch Your AI Agent
 
